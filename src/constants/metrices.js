@@ -1,11 +1,13 @@
-import { Dimension } from 'react-native'
+import { Dimensions } from 'react-native'
 
 const metrices = {
     HEIGHT: (number) => {
-        number ? number * Dimension.get('screen').height : Dimension.get('screen').height 
+        if (number) return number * Dimensions.get('screen').height
+        else return Dimensions.get('screen').height
     },
     WIDTH: (number) => {
-        number ? number * Dimension.get('screen').width : Dimension.get('screen').width 
+        if (number) return number * Dimensions.get('screen').width 
+        else return Dimensions.get('screen').width
     }
 }
 
