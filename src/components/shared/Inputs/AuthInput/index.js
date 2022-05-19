@@ -7,12 +7,6 @@ export default function AuthInput({ item, data }) {
 
     const props = data;
 
-    console.log(
-        "======================================",
-        item,
-        "======================================",
-    )
-
     if (item) {
         return (
             <View style={styles.box}>

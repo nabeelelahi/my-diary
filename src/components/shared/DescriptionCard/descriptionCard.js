@@ -5,10 +5,10 @@ import colors from '~/constants/colors';
 export const styles = StyleSheet.create({
     card:{
         width: metrices.WIDTH(0.65),
-        minHeight: metrices.HEIGHT(0.4),
+        height: metrices.HEIGHT(0.4),
         backgroundColor: colors.baseWhite,
         borderRadius: 7.5,
-        alignSelf: 'center'
+        alignSelf: 'center',
     },
     header:{
         height: '20%', 
@@ -22,5 +22,7 @@ export const styles = StyleSheet.create({
     },
     text:{
         fontSize: 12,
+        color: colors.baseBlack,
+        paddingBottom: '15%'
     }
 });

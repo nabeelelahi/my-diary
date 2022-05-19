@@ -18,12 +18,14 @@ export const styles = StyleSheet.create({
             },
             title:{
                 marginVertical: metrices.HEIGHT(0.025),
-                fontSize: 22.5
+                fontSize: 19,
+                textAlign: 'center'
             },
             forgotPassword:{
                 color: colors.secondary,
                 marginHorizontal: metrices.WIDTH(0.1),
                 alignSelf: 'flex-end',
-                marginTop: metrices.HEIGHT(0.02)
+                marginTop: metrices.HEIGHT(0.02),
+                fontSize: 12
             }
         })

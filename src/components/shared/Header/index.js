@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { drawerIcon } from '~/assets'
 import globalStyles from '~/assets/styles/globalStyles'
 import LinearGradient from 'react-native-linear-gradient'
@@ -7,7 +7,7 @@ import colors from '~/constants/colors'
 import Avatar from '~/components/shared/Avatar'
 import { styles } from './header'
 
-export default function Header({ title }) {
+export default function Header({ title, navigation }) {
     return (
         <LinearGradient
             start={{ x: 0, y: 0 }}
@@ -17,7 +17,9 @@ export default function Header({ title }) {
         >
             <View style={styles.rowFlex}>
                 <View style={styles.columnFlex}>
-                    <Image source={drawerIcon} />
+                    <TouchableOpacity  onPress={() => navigation.openDrawer()}>
+                        <Image source={drawerIcon} />
+                    </TouchableOpacity>
                     <Text style={styles.title}>{title}</Text>
                 </View>
                 <Avatar />

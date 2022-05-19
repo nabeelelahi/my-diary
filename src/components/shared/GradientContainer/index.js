@@ -4,8 +4,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import colors from '~/constants/colors';
 import globalStyles from '~/assets/styles/globalStyles';
 import { logo } from '~/assets';
+import metrices from '~/constants/metrices';
 
-export default function GradientContainer({ children, topContainer }) {
+export default function GradientContainer({ children, topContainer, contentType = 'plain' }) {
 
     let topView;
     let baseStyles;
@@ -23,9 +24,13 @@ export default function GradientContainer({ children, topContainer }) {
         topView = (
             <></>
         )
-        baseStyles = {...globalStyles.container, ...globalStyles.centerContent}
+        baseStyles = {...globalStyles.container, ...globalStyles.centerContent }
     }
-
+    
+    if(contentType === 'form'){
+        baseStyles = {...globalStyles.container, alignItems: 'center', minHeight: metrices.HEIGHT() }
+    }
+ 
 
 
     return (

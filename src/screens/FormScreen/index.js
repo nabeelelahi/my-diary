@@ -1,43 +1,58 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { 
+    View, 
+    Image, 
+    Text, 
+    TouchableOpacity, 
+    ScrollView, 
+    KeyboardAvoidingView,
+    TouchableWithoutFeedback,
+    Keyboard
+ } from 'react-native'
 import { styles } from './formScreen';
 import globalStyles from '~/assets/styles/globalStyles';
 import GradientContainer from '~/components/shared/GradientContainer';
 import Button from '~/components/shared/Button';
 import { Formik } from 'formik';
-import schemas from '~/config/DummyData/validations'
-import initialValues from '~/config/DummyData/validations'
-import formFields from '~/config/DummyData/formFields';
-import { arrow, personalInfo } from '~/assets'
+import schemas from '~/config/Data/validations'
+import initialValues from '~/config/Data/validations'
+import formFields from '~/config/Data/formFields';
+import { arrow, logo } from '~/assets'
 import BaseInput from '~/components/shared/Inputs/BaseInput';
 import Avatar from '~/components/shared/Avatar';
+import * as yup from 'yup'
 
-export default function FormScreen({ navigation }) {
+export default function FormScreen({ navigation, route }) {
+
+    const { params } = route;
 
     return (
-        <ScrollView>
-            <KeyboardAvoidingView>
-                <GradientContainer>
+        <KeyboardAvoidingView style={styles.avoidView}>
+            <ScrollView style={styles.scrollView}>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <GradientContainer contentType={'form'}>
                     <View style={styles.topContainer}>
-                        <Image resizeMode='contain' style={styles.back} source={arrow} />
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <Image resizeMode='contain' style={styles.back} source={arrow} />
+                        </TouchableOpacity>
                         <View style={globalStyles.centerContent}>
-                            <Image resizeMode='contain' style={styles.logo} source={personalInfo} />
-                            <Text style={globalStyles.title}>Personal Info</Text>
+                            <Image resizeMode='contain' style={styles.logo} source={params?.icon || logo} />
+                            <Text style={globalStyles.title}>{params.title || 'My Medical Diary'}</Text>
                         </View>
                         <View>
                             <Avatar />
                         </View>
                     </View>
                     <Formik
-                        validationSchema={schemas.personalInfo}
-                        initialValues={initialValues.personalInfo}
+                        validationSchema={schemas[params.slug] || yup.object({})}
+                        initialValues={initialValues[params.slug] || {}}
                         onSubmit={(values) => console.log(values)}
                     >
                         {(props) => {
                             return (
                                 <>
                                     {
-                                        formFields.personalInfo.map(item => (
+                                        formFields[params.slug]?.map(item => (
                                             <BaseInput
                                                 key={item.name}
                                                 item={item}
@@ -47,7 +62,7 @@ export default function FormScreen({ navigation }) {
                                     }
                                     <TouchableOpacity onPress={props.handleSubmit}>
                                         <Button
-                                            title="Continue"
+                                            title="Save"
                                             style={{ ...globalStyles.baseButton, ...styles.button }}
                                             textStyle={{ ...globalStyles.baseButtonText, ...styles.buttonText }}
                                         />
@@ -58,8 +73,9 @@ export default function FormScreen({ navigation }) {
                         }
                     </Formik>
                 </GradientContainer>
-            </KeyboardAvoidingView>
-        </ScrollView>
+                </TouchableWithoutFeedback>
+            </ScrollView>
+        </KeyboardAvoidingView>
     )
 
 }

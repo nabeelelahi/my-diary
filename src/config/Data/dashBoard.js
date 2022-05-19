@@ -1,0 +1,35 @@
+import {
+    personalInfo,
+    insurance,
+    blood,
+    vaccinations,
+    physician,
+    medicalTest,
+    diagnosis,
+    surgeries,
+    medications,
+    equipment,
+    specialCare,
+    emergencyRoom,
+    doctorVisits,
+    homeCare,
+    emergencyContact
+} from '~/assets'
+
+export const dashBoardOptions = [
+    { title: 'Personal Info', icon: personalInfo, slug: 'personalInfo' },
+    { title: 'Insurance', icon: insurance, slug: 'insurance' },
+    { title: 'Blood', icon: blood, slug: 'blood' },
+    { title: 'Vaccinations', icon: vaccinations, slug: 'vaccinations' },
+    { title: 'Physician', icon: physician, slug: 'physician' },
+    { title: 'Medical Test', icon: medicalTest, slug: 'medicalTest' },
+    { title: 'Diagnosis', icon: diagnosis, slug: 'diagnosis' },
+    { title: 'Surgeries', icon: surgeries, slug: 'surgeries' },
+    { title: 'Medications', icon: medications, slug: 'medications' },
+    { title: 'Equipment', icon: equipment, slug: 'equipment' },
+    { title: 'Special Care', icon: specialCare, slug: 'specialCare' },
+    { title: 'Emergency Room', icon: emergencyRoom, slug: 'emergencyRoom' },
+    { title: 'Doctor Visits', icon: doctorVisits, slug: 'doctorVisits' },
+    { title: 'Home Care', icon: homeCare, slug: 'homeCare' },
+    { title: 'Emergency Contact', icon: emergencyContact, slug: 'emergencyContact' },
+]

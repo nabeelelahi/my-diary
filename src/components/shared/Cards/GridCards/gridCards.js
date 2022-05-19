@@ -3,9 +3,13 @@ import colors from "~/constants/colors";
 import metrices from "~/constants/metrices";
 
 export const styles = StyleSheet.create({
-    card: {
+    opacity:{
         marginTop: metrices.HEIGHT(0.02),
         height: metrices.HEIGHT(0.225),
+    },
+    card: {
+        height: '100%',
+        width: '100%',
         borderRadius: 20,
         shadowColor: colors.baseBlack,
         shadowOffset: {

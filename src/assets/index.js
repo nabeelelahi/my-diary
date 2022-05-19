@@ -17,6 +17,8 @@ import emergencyRoom from './images/Emergency-Room.png'
 import doctorVisits from './images/Doctors-Visits.png'
 import homeCare from './images/Home-Care.png'
 import arrow from './images/Arrow.png'
+import physician from './images/Physician.png'
+import emergencyContact from './images/Emergency-Contact.png'
 
 export {
     logo,
@@ -37,5 +39,7 @@ export {
     emergencyRoom,
     doctorVisits,
     homeCare,
-    arrow
+    arrow,
+    physician,
+    emergencyContact
 }

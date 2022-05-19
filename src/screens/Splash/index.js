@@ -38,82 +38,9 @@ const FadeInView = (props) => {
 
 export default function Splash({ navigation }) {
 
-//   async function getUser() {
-
-//     const currentUserString = await AsyncStorage.getItem("user")
-
-//     const currentUser = JSON.parse(currentUserString)
-
-//    if(currentUser){
-
-//     if (currentUser?.type === "guest") {
-//       navigation.navigate("Guest")
-//     }
-//     else {
-//       getStatus(currentUser).then(status => {
-//         if (status === 'APPROVED') {
-//           if (currentUser?.type === "sponsor") navigation.navigate("Sponser")
-
-//           else if (currentUser?.type === "doctor") navigation.navigate("Doctor")
-
-//           else if (currentUser?.type === "beneficiary") navigation.navigate("Beneficiary")
-
-//         }
-//         else {
-
-//           navigation.navigate("AccountDisabled", {status})
-
-//         }
-//       })
-//     }
-
-//    }
-//    else{
-//      navigation.navigate('Start')
-//    }
-
-//   }
-
-//   async function getStatus(currentUser) {
-
-//     if (currentUser) {
-
-//       const url = `common/GET/status/${currentUser.type}/${currentUser.id}`
-
-//       const response = await http(url)
-
-//       if (response?.success) {
-//         return response.data.status
-//       }
-//       else {
-//         navigation.navigate('NoInternet')
-//       }
-
-//     }
-//     else {
-//       navigation.navigate("Start")
-//     }
-//   }
-
-//   useFocusEffect(
-//     React.useCallback(() => {
-//       NetInfo.fetch().then(state => {
-//         // console.log(state)
-//         if (state.isConnected) getUser()
-//         else navigation.navigate('NoInternet')
-//       });
-//     }, [navigation])
-//   );
-
-//   useEffect(() => {
-//     setTimeout(() => {
-//       NetInfo.fetch().then(state => {
-//         // console.log(state)
-//         if (state.isConnected) getUser()
-//         else navigation.navigate('NoInternet')
-//       });
-//     }, 1500);
-//   }, [])
+useEffect(() => {
+  setTimeout(() => navigation.navigate('Disclaimer'), 1500)
+})
 
   return (
     <GradientContainer>

@@ -1,5 +1,13 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native'
+import { 
+    View, 
+    Text, 
+    TouchableOpacity,
+    TouchableWithoutFeedback,
+    KeyboardAvoidingView,
+    ScrollView,
+    Keyboard
+ } from 'react-native'
 import { styles } from './signup';
 import globalStyles from '~/assets/styles/globalStyles';
 import {
@@ -39,46 +47,51 @@ export default function Signup({ navigation }) {
 
 
     return (
-        <GradientContainer topContainer={true}>
-            <Text style={{...globalStyles.title, ...styles.title}}>Sign Up</Text>
-            <Formik
-                validationSchema={schema}
-                initialValues={{ email: '', password: '', name: '' }}
-                onSubmit={(values) => console.log(values)}
-            >
-                {(props) => {
-                    return (
-                        <>
-                            {
-                                inputs.map(item => (
-                                    <AuthInput
-                                        key={item.key}
-                                        item={item}
-                                        data={props}
-                                    />
-                                ))
-                            }
-                            <TouchableOpacity onPress={props.handleSubmit}>
-                                <Button
-                                    title="Continue"
-                                    style={{ ...globalStyles.baseButton, ...styles.button }}
-                                    textStyle={{ ...globalStyles.baseButtonText, ...styles.buttonText }}
-                                />
-                            </TouchableOpacity>
-                            <View style={{...globalStyles.dontHaveAccountBox, ...globalStyles.centerContent}}>
+        <ScrollView>
+            <KeyboardAvoidingView>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <GradientContainer topContainer={true} contentType='form'>
+                    <Text style={{ ...globalStyles.title, ...styles.title }}>Sign Up</Text>
+                    <Formik
+                        validationSchema={schema}
+                        initialValues={{ email: '', password: '', name: '' }}
+                        onSubmit={(values) => console.log(values)}
+                    >
+                        {(props) => {
+                            return (
+                                <>
+                                    {
+                                        inputs.map(item => (
+                                            <AuthInput
+                                                key={item.key}
+                                                item={item}
+                                                data={props}
+                                            />
+                                        ))
+                                    }
+                                    <TouchableOpacity onPress={props.handleSubmit}>
+                                        <Button
+                                            title="Continue"
+                                            style={{ ...globalStyles.baseButton, ...styles.button }}
+                                            textStyle={{ ...globalStyles.baseButtonText, ...styles.buttonText }}
+                                        />
+                                    </TouchableOpacity>
+                                    <View style={{ ...globalStyles.dontHaveAccountBox, ...globalStyles.centerContent }}>
 
-                                <Text style={globalStyles.dontHaveAnAccountText}>Joined us before?</Text>
-                                <TouchableOpacity>
-                                    <Text style={globalStyles.dontHaveAnAccountLink}>Login</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </>
-                    )
-                }
-                }
-            </Formik>
-
-        </GradientContainer>
+                                        <Text style={globalStyles.dontHaveAnAccountText}>Joined us before?</Text>
+                                        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                                            <Text style={globalStyles.dontHaveAnAccountLink}>Login</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </>
+                            )
+                        }
+                        }
+                    </Formik>
+                </GradientContainer>
+            </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
+        </ScrollView >
     )
 
 }

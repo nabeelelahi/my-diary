@@ -50,11 +50,11 @@ const globalStyles = StyleSheet.create({
   },
   dontHaveAnAccountText: {
     color: colors.baseWhite,
-    fontSize: 13,
+    fontSize: 12,
   },
   dontHaveAnAccountLink: {
     color: colors.secondary,
-    fontSize: 13,
+    fontSize: 12,
     marginHorizontal: 5,
     fontWeight: 'bold'
   }

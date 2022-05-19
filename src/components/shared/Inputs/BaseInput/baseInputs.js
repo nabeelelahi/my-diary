@@ -7,15 +7,20 @@ export const styles = StyleSheet.create({
     box: {
         flexDirection: 'row',
         width: metrices.WIDTH(0.8),
-        height: metrices.HEIGHT(0.06),
+        height: metrices.HEIGHT(0.0725),
         alignSelf: 'center',
         marginVertical: '2.5%',
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderRadius: 0.3,
+        borderRadius: 2.5,
         borderWidth: 1,
-        borderColor: colors.secondary,
+        borderColor: colors.baseWhite,
         fontSize: 14
+    },
+    select: {
+        width: metrices.WIDTH(0.8),
+        height: metrices.HEIGHT(0.06),
+        marginVertical: '3%',
     },
     icon: {
         height: metrices.HEIGHT(0.035),
@@ -26,8 +31,8 @@ export const styles = StyleSheet.create({
         // height: '100%',
         fontSize: 14
     },
-    label:{
+    label: {
         fontSize: 12,
-        color: colors.secondary
+        color: colors.baseWhite
     }
 })

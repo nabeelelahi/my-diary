@@ -16,14 +16,14 @@ export const styles = StyleSheet.create({
         paddingHorizontal: '2%'
     },
     icon: {
-        height: metrices.HEIGHT(0.035),
-        width: '8%',
+        height: metrices.HEIGHT(0.03),
+        width: '7%',
     },
     input: {
         width: '90%',
         height: '100%',
         borderBottomWidth: 1,
         borderBottomColor: colors.secondary,
-        fontSize: 14
+        fontSize: 12.5
     }
 })

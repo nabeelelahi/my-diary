@@ -3,6 +3,13 @@ import metrices from "~/constants/metrices"
 import colors from "~/constants/colors"
 
 export const styles = StyleSheet.create({
+    scrollView:{
+        flex: 1,
+        
+    },
+    avoidView:{
+        flex: 1,
+    },
     button: {
         height: metrices.HEIGHT(0.05),
         width: metrices.WIDTH(0.8),
