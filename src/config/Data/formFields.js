@@ -53,7 +53,7 @@ const emergencyContact = [
     { name: 'name', label: 'Name', key: '1', type: 'input' },
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
-    { name: 'relation', label: 'Relation', key: '4', type: 'input' },
+    { name: 'relation', label: 'Relation', key: '4', type: 'select', slug:'emergencyContact_relation' },
 ]
 
 const doctorVisits = [
@@ -70,18 +70,18 @@ const emergencyRoom = [
     { name: 'facilityName', label: 'Facility Name', key: '2', type: 'input' },
     { name: 'physcianName', label: 'Physican Name', key: '3', type: 'input' },
     { name: 'reason', label: 'Reason For Appointment', key: '5', type: 'input' },
-    { name: 'hospitalAdmission', label: 'Hospital Admission', key: '6', type: 'input' },
+    { name: 'hospitalAdmission', label: 'Hospital Admission', key: '6', type: 'select', slug: 'emergencyRoom_hospitalAdmission' },
 ]
 
 const homeCare = [
     { name: 'name', label: 'Name', key: '1', type: 'input' },
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
-    { name: 'service', label: 'Service', key: '4', type: 'input' },
+    { name: 'service', label: 'Service', key: '4', type: 'select', slug: 'homeCare_service' },
 ]
 
 const medicalTest = [
-    { name: 'procedure', label: 'Diagnostic Test', key: '1', type: 'input' },
+    { name: 'procedure', label: 'Diagnostic Test', key: '1', type: 'select', slug: 'medicalTest_procedure' },
     { name: 'date', label: 'Date', key: '2', type: 'input' },
     { name: 'reason', label: 'Reason for Test', key: '3', type: 'input' },
 ]
@@ -92,24 +92,24 @@ const medications = [
     { name: 'frequency', label: 'Frequency', key: '3', type: 'input' },
     { name: 'startDate', label: 'Start Date', key: '4', type: 'input' },
     { name: 'endDate', label: 'End Date', key: '5', type: 'input' },
-    { name: 'reason', label: 'Reason for Test', key: '6', type: 'input' },
+    { name: 'reason', label: 'Reason for Test', key: '6', type: 'select', slug: 'medications_reason' },
 ]
 
 const equipment = [
-    { name: 'walker', label: 'Walker', key: '1', type: 'input' },
-    { name: 'care', label: 'Care', key: '2', type: 'input' },
-    { name: 'wheelChair', label: 'Wheel Chair', key: '3', type: 'input' },
-    { name: 'prosthetics', label: 'Prosthetics', key: '4', type: 'input' },
-    { name: 'hospitalBed', label: 'Hospital Bed', key: '5', type: 'input' },
-    { name: 'crutches', label: 'Crutches', key: '6', type: 'input' },
-    { name: 'brace', label: 'Brace', key: '7', type: 'input' },
-    { name: 'oxygen', label: 'Oxygen', key: '8', type: 'input' },
-    { name: 'bipap', label: 'Bi pap', key: '9', type: 'input' },
-    { name: 'cpap', label: 'C pap', key: '0', type: 'input' },
-    { name: 'nebulizer', label: 'Nebulizer', key: '10', type: 'input' },
-    { name: 'glucoMeter', label: 'Gluco Meter', key: '11', type: 'input' },
-    { name: 'anticoagulentMechine', label: 'Anticoagulent Mechine', key: '12', type: 'input' },
-    { name: 'others', label: 'Others', key: '13', type: 'input' },
+    { name: 'walker', label: 'Walker', key: '1', type: 'select', slug: 'equipment' },
+    { name: 'care', label: 'Care', key: '2', type: 'select', slug: 'equipment' },
+    { name: 'wheelChair', label: 'Wheel Chair', key: '3', type: 'select', slug: 'equipment' },
+    { name: 'prosthetics', label: 'Prosthetics', key: '4', type: 'select', slug: 'equipment' },
+    { name: 'hospitalBed', label: 'Hospital Bed', key: '5', type: 'select', slug: 'equipment' },
+    { name: 'crutches', label: 'Crutches', key: '6', type: 'select', slug: 'equipment' },
+    { name: 'brace', label: 'Brace', key: '7', type: 'select', slug: 'equipment' },
+    { name: 'oxygen', label: 'Oxygen', key: '8', type: 'select', slug: 'equipment' },
+    { name: 'bipap', label: 'Bi pap', key: '9', type: 'select', slug: 'equipment' },
+    { name: 'cpap', label: 'C pap', key: '0', type: 'select', slug: 'equipment' },
+    { name: 'nebulizer', label: 'Nebulizer', key: '10', type: 'select', slug: 'equipment' },
+    { name: 'glucoMeter', label: 'Gluco Meter', key: '11', type: 'select', slug: 'equipment' },
+    { name: 'anticoagulentMechine', label: 'Anticoagulent Mechine', key: '12', type: 'select', slug: 'equipment' },
+    { name: 'others', label: 'Others', key: '13', type: 'select', slug: 'equipment' },
 ]
 
 const formFields = {
