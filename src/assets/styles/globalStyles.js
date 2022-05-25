@@ -57,6 +57,10 @@ const globalStyles = StyleSheet.create({
     fontSize: 12,
     marginHorizontal: 5,
     fontWeight: 'bold'
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 });
 

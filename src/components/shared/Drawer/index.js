@@ -1,12 +1,19 @@
 import React from 'react';
-import { View, Image } from 'react-native';
-// import { Drawer } from 'react-native-paper';
+import { View, Image, Text } from 'react-native';
+import { Drawer } from 'react-native-paper';
 import {
     DrawerContentScrollView,
     DrawerItem
 } from '@react-navigation/drawer';
 import LinearGradient from 'react-native-linear-gradient';
+import Avatar from '~/components/shared/Avatar';
+import MenuCard from '~/components/shared/Cards/MenuCard';
 import colors from '~/constants/colors';
+import {
+    settings,
+    faqs,
+    contact
+} from '~/assets'
 import { styles } from './drawer'
 
 
@@ -21,23 +28,18 @@ export default function DrawerComp(props) {
             colors={colors.baseGradient}
         >
             <DrawerContentScrollView {...props}>
-                <View>
-                    {/* <Drawer.Section style={styles.drawerSection}>
-                        <View style={styles.homeView}>
-                            <DrawerItem
-                                icon={() => (
-                                    <Icon
-                                        name="clipboard-list"
-                                        color={baseColors.WhiteToned}
-                                        size={25}
-                                    />
-                                )}
-                                label="EMR"
-                                labelStyle={styles.labelStyle}
-                                onPress={() => { props.navigation.navigate('EMR') }}
-                            />
+                <View style={styles.container}>
+                    <Drawer.Section>
+                        <View style={styles.topView}>
+                            <Avatar />
+                            <Text style={styles.title}>Inga</Text>
                         </View>
-                    </Drawer.Section> */}
+                        <View>
+                            <MenuCard source={settings} title={'Settings'} />
+                            <MenuCard source={faqs} title={"FAQ's"} />
+                            <MenuCard source={contact} title={'Contact'} />
+                        </View>
+                    </Drawer.Section>
                 </View>
             </DrawerContentScrollView>
         </LinearGradient>

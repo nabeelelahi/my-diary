@@ -2,23 +2,27 @@ import React from 'react'
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import GridCard from '~/components/shared/Cards/GridCards'
 import Header from '~/components/shared/Header'
-import { dashBoardOptions } from '~/config/Data/dashBoard'
-import { styles } from './dashboard'
+import subTabs from '../../config/Data/subTabs'
+import { styles } from './subTabs'
 
-export default function Dashboard({ navigation }) {
+export default function SubTabs({ navigation, route }) {
+
+    const { title, slug } = route.params;
+
+    console.log(subTabs[slug])
 
   function redirect(item) {
-    if (item.slug === 'specialCare') navigation.navigate('SubTabs', item) 
+    if (item.slug === 'specialCare') console.log(item.slug)
     else navigation.navigate('FormScreen', item)
   }
 
   return (
     <>
-      <Header title={'Dashboard'} navigation={navigation} />
+      <Header title={title} navigation={navigation} />
       <ScrollView>
         <View style={styles.gridFlex}>
           {
-            dashBoardOptions.map((item, index) => (
+            subTabs[slug]?.map((item, index) => (
               <GridCard
                 key={item.slug}
                 item={item}

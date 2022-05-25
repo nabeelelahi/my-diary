@@ -17,11 +17,11 @@ import {
 } from '~/assets'
 
 export const dashBoardOptions = [
-    { title: 'Personal Info', icon: personalInfo, slug: 'personalInfo' },
+    { title: 'Personal Information', icon: personalInfo, slug: 'personalInfo' },
     { title: 'Insurance', icon: insurance, slug: 'insurance' },
     { title: 'Blood', icon: blood, slug: 'blood' },
     { title: 'Vaccinations', icon: vaccinations, slug: 'vaccinations' },
-    { title: 'Physician', icon: physician, slug: 'physician' },
+    { title: 'Physicians', icon: physician, slug: 'physician' },
     { title: 'Medical Test', icon: medicalTest, slug: 'medicalTest' },
     { title: 'Diagnosis', icon: diagnosis, slug: 'diagnosis' },
     { title: 'Surgeries', icon: surgeries, slug: 'surgeries' },
@@ -31,5 +31,5 @@ export const dashBoardOptions = [
     { title: 'Emergency Room', icon: emergencyRoom, slug: 'emergencyRoom' },
     { title: 'Doctor Visits', icon: doctorVisits, slug: 'doctorVisits' },
     { title: 'Home Care', icon: homeCare, slug: 'homeCare' },
-    { title: 'Emergency Contact', icon: emergencyContact, slug: 'emergencyContact' },
+    { title: 'Emergency Contacts', icon: emergencyContact, slug: 'emergencyContact' },
 ]

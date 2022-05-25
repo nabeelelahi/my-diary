@@ -19,6 +19,10 @@ import homeCare from './images/Home-Care.png'
 import arrow from './images/Arrow.png'
 import physician from './images/Physician.png'
 import emergencyContact from './images/Emergency-Contact.png'
+import forward from './images/Forward.png'
+import settings from './images/Settings.png'
+import faqs from './images/Faqs.png'
+import contact from './images/Contact.png'
 
 export {
     logo,
@@ -41,5 +45,9 @@ export {
     homeCare,
     arrow,
     physician,
-    emergencyContact
+    emergencyContact,
+    forward,
+    settings,
+    faqs,
+    contact
 }

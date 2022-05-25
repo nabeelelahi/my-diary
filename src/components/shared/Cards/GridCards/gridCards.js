@@ -32,5 +32,6 @@ export const styles = StyleSheet.create({
     },
     title:{
         color: colors.secondary,
+        textAlign: 'center'
     }
 })

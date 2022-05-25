@@ -113,6 +113,27 @@ const equipment = {
     others: ''
 }
 
+const laboratoryTest = {
+    date: '',
+    time: '',
+    procedure: '',
+}
+
+const specialCareMedication = {
+    date: '',
+    procedure: '',
+}
+
+const vitals = {
+    date: '',
+    time: '',
+    bp: '',
+    bs: '',
+    resp: '',
+    hr: '',
+    temp: '',
+}
+
 const initialValues = {
     personalInfo,
     insurance,
@@ -126,7 +147,10 @@ const initialValues = {
     homeCare,
     medicalTest,
     medications,
-    equipment
+    equipment,
+    laboratoryTest,
+    specialCareMedication,
+    vitals
 }
 
 export default initialValues

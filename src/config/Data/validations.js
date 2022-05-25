@@ -194,7 +194,40 @@ const equipment = {
     anticoagulentMechine: yup.string()
         .required(),
     others: yup.string()
-    .required(),
+        .required(),
+}
+
+const laboratoryTest = {
+    date: yup.string()
+        .required(),
+    time: yup.string()
+        .required(),
+    procedure: yup.string()
+        .required(),
+}
+
+const specialCareMedication = {
+    date: yup.string()
+        .required(),
+    procedure: yup.string()
+        .required(),
+}
+
+const vitals = {
+    date: yup.string()
+        .required(),
+    time: yup.string()
+        .required(),
+    bp: yup.string()
+        .required(),
+    bs: yup.string()
+        .required(),
+    resp: yup.string()
+        .required(),
+    hr: yup.number()
+        .required(),
+    temp: yup.number()
+        .required(),
 }
 
 const schemas = {
@@ -210,7 +243,10 @@ const schemas = {
     homeCare,
     medicalTest,
     medications,
-    equipment
+    equipment,
+    laboratoryTest,
+    specialCareMedication,
+    vitals
 }
 
 export default schemas

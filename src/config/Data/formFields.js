@@ -7,7 +7,6 @@ const personalInfo = [
     { name: 'weight', label: 'Weight', key: '6', type: 'input' },
     { name: 'age', label: 'Age', key: '7', type: 'input' },
     { name: 'sex', label: 'Sex', key: '8', type: 'select' },
-    { name: 'bloodType', label: 'Blood Type', key: '9', type: 'input' },
     { name: 'allergies', label: 'Allergies', key: '0', type: 'input' },
 ]
 
@@ -53,7 +52,7 @@ const emergencyContact = [
     { name: 'name', label: 'Name', key: '1', type: 'input' },
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
-    { name: 'relation', label: 'Relation', key: '4', type: 'select', slug:'emergencyContact_relation' },
+    { name: 'relation', label: 'Relation', key: '4', type: 'select', slug: 'emergencyContact_relation' },
 ]
 
 const doctorVisits = [
@@ -69,21 +68,23 @@ const emergencyRoom = [
     { name: 'date', label: 'Date', key: '1', type: 'input' },
     { name: 'facilityName', label: 'Facility Name', key: '2', type: 'input' },
     { name: 'physcianName', label: 'Physican Name', key: '3', type: 'input' },
-    { name: 'reason', label: 'Reason For Appointment', key: '5', type: 'input' },
+    { name: 'reason', label: 'Reason For Emergency', key: '5', type: 'input' },
     { name: 'hospitalAdmission', label: 'Hospital Admission', key: '6', type: 'select', slug: 'emergencyRoom_hospitalAdmission' },
 ]
 
 const homeCare = [
-    { name: 'name', label: 'Name', key: '1', type: 'input' },
+    { name: 'agencyName', label: 'Name of Agency', key: '1', type: 'input' },
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
     { name: 'service', label: 'Service', key: '4', type: 'select', slug: 'homeCare_service' },
+    { name: 'assistantName', label: 'Name of Assistant', key: '4', type: 'input' },
+    { name: 'noOfHours', label: 'No. of hours (Assistence/week)', key: '3', type: 'input' },
 ]
 
 const medicalTest = [
     { name: 'procedure', label: 'Diagnostic Test', key: '1', type: 'select', slug: 'medicalTest_procedure' },
     { name: 'date', label: 'Date', key: '2', type: 'input' },
-    { name: 'reason', label: 'Reason for Test', key: '3', type: 'input' },
+    { name: 'reason', label: 'Reason for Test ()', key: '3', type: 'input' },
 ]
 
 const medications = [
@@ -112,6 +113,31 @@ const equipment = [
     { name: 'others', label: 'Others', key: '13', type: 'select', slug: 'equipment' },
 ]
 
+const blood = [
+    { name: 'bloodType', label: 'Blood Type', key: '9', type: 'select', slug: 'blood_bloodType' },
+]
+
+const laboratoryTest = [
+    { name: 'date', label: 'Date', key: '2', type: 'input' },
+    { name: 'time', label: 'Time', key: '3', type: 'input' },
+    { name: 'procedure', label: 'Laboratory Test', key: '1', type: 'select', slug: 'medicalTest_procedure' },
+]
+
+const specialCareMedication = [
+    { name: 'date', label: 'Date', key: '2', type: 'input' },
+    { name: 'procedure', label: 'Medication', key: '1', type: 'select', slug: 'medicalTest_procedure' },
+]
+
+const vitals = [
+    { name: 'date', label: 'Date', key: '1', type: 'input' },
+    { name: 'time', label: 'Time', key: '2', type: 'input' },
+    { name: 'bp', label: 'Blood Pressure', key: '3', type: 'input' },
+    { name: 'bs', label: 'Blood Sugar', key: '3', type: 'input' },
+    { name: 'resp', label: 'Respirations', key: '3', type: 'input' },
+    { name: 'hr', label: 'Heart Rate', key: '3', type: 'input' },
+    { name: 'temp', label: 'Tempreture', key: '3', type: 'input' },
+]
+
 const formFields = {
     personalInfo,
     insurance,
@@ -125,7 +151,11 @@ const formFields = {
     homeCare,
     medicalTest,
     medications,
-    equipment
+    equipment,
+    blood,
+    laboratoryTest,
+    specialCareMedication,
+    vitals
 }
 
 export default formFields;
