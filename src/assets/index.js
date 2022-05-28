@@ -23,6 +23,7 @@ import forward from './images/Forward.png'
 import settings from './images/Settings.png'
 import faqs from './images/Faqs.png'
 import contact from './images/Contact.png'
+import plus from './images/Plus.png'
 
 export {
     logo,
@@ -49,5 +50,6 @@ export {
     forward,
     settings,
     faqs,
-    contact
+    contact,
+    plus
 }

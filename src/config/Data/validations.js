@@ -19,10 +19,13 @@ const personalInfo = yup.object({
         .required(),
     sex: yup.string()
         .required(),
-    bloodType: yup.string()
-        .required(),
     allergies: yup.string()
         .required(),
+})
+
+const blood = yup.object({
+    bloodType: yup.string()
+        .required()
 })
 
 const insurance = yup.object({

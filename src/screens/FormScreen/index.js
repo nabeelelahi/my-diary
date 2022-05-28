@@ -12,7 +12,7 @@ import {
 import { styles } from './formScreen';
 import globalStyles from '~/assets/styles/globalStyles';
 import GradientContainer from '~/components/shared/GradientContainer';
-import Button from '~/components/shared/Button';
+import Button from '~/components/shared/Buttons/Button';
 import { Formik } from 'formik';
 import schemas from '~/config/Data/validations'
 import initialValues from '~/config/Data/validations'

@@ -15,7 +15,7 @@ import {
     password
 } from '~/assets';
 import GradientContainer from '~/components/shared/GradientContainer';
-import Button from '~/components/shared/Button';
+import Button from '~/components/shared/Buttons/Button';
 import AuthInput from '~/components/shared/Inputs/AuthInput'
 import { Formik } from 'formik';
 import * as yup from 'yup';

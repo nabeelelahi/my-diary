@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
-import GridCard from '~/components/shared/Cards/GridCards'
+import GridCard from '~/components/shared/Cards/GridCard'
 import Header from '~/components/shared/Header'
 import { dashBoardOptions } from '~/config/Data/dashBoard'
 import { styles } from './dashboard'
@@ -9,7 +9,7 @@ export default function Dashboard({ navigation }) {
 
   function redirect(item) {
     if (item.slug === 'specialCare') navigation.navigate('SubTabs', item) 
-    else navigation.navigate('FormScreen', item)
+    else navigation.navigate('ViewScreen', item)
   }
 
   return (

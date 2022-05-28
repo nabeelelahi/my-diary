@@ -7,8 +7,11 @@ const personalInfo = {
     weight: '',
     age: '',
     sex: '',
-    bloodType: '',
     allergies: '',
+}
+
+const blood = {
+    bloodType: ''
 }
 
 const insurance = {
@@ -136,6 +139,7 @@ const vitals = {
 
 const initialValues = {
     personalInfo,
+    blood,
     insurance,
     physician,
     diagnosis,

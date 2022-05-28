@@ -3,7 +3,7 @@ import { styles } from './disclaimer';
 import globalStyles from '~/assets/styles/globalStyles';
 import GradientContainer from '~/components/shared/GradientContainer';
 import DescriptionCard from '~/components/shared/DescriptionCard';
-import Button from '~/components/shared/Button';
+import Button from '~/components/shared/Buttons/Button';
 import { TouchableOpacity } from 'react-native';
 
 export default function Disclaimer({ navigation }) {

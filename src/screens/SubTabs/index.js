@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
-import GridCard from '~/components/shared/Cards/GridCards'
+import GridCard from '~/components/shared/Cards/GridCard'
 import Header from '~/components/shared/Header'
 import subTabs from '../../config/Data/subTabs'
 import { styles } from './subTabs'
@@ -8,12 +8,11 @@ import { styles } from './subTabs'
 export default function SubTabs({ navigation, route }) {
 
     const { title, slug } = route.params;
-
-    console.log(subTabs[slug])
+    const data = route.params;
 
   function redirect(item) {
     if (item.slug === 'specialCare') console.log(item.slug)
-    else navigation.navigate('FormScreen', item)
+    else navigation.navigate('ViewScreen', item) 
   }
 
   return (
