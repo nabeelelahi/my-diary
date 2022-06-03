@@ -27,45 +27,45 @@ const physician = [
     { name: 'city', label: 'City', key: '3', type: 'input' },
     { name: 'state', label: 'State', key: '4', type: 'input' },
     { name: 'phone', label: 'TelePhone #', key: '5', type: 'input' },
-    { name: 'typeOfCare', label: 'Type Of Care', key: '6', type: 'input' },
+    { name: 'doctore', label: 'Doctore', key: '6', type: 'input' },
 ]
 
 const diagnosis = [
     { name: 'illness', label: 'Medical Problem/Illness', key: '1', type: 'input' },
-    { name: 'date', label: 'Date Of Diagnosis', key: '2', type: 'input' },
+    { name: 'date', label: 'Date Of diagnosis/Illness', key: '2', type: 'date' },
 ]
 
 const surgeries = [
     { name: 'procedure', label: 'Surgical Opration / Procedure', key: '1', type: 'input' },
-    { name: 'date', label: 'Date', key: '2', type: 'input' },
+    { name: 'date', label: 'Date', key: '2', type: 'date' },
     { name: 'hospital', label: 'Hospital', key: '3', type: 'input' },
 ]
 
 
 const vaccinations = [
     { name: 'name', label: 'Vaccination Name', key: '1', type: 'select', slug: 'vaccinations_name' },
-    { name: 'date', label: 'Date', key: '2', type: 'input' },
-    { name: 'shots', label: 'Shots', key: '3', type: 'input' },
+    { name: 'date', label: 'Date', key: '2', type: 'date' },
+    // { name: 'shots', label: 'Shots', key: '3', type: 'input' },
 ]
 
 const emergencyContact = [
     { name: 'name', label: 'Name', key: '1', type: 'input' },
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
-    { name: 'relation', label: 'Relation', key: '4', type: 'select', slug: 'emergencyContact_relation' },
+    { name: 'relation', label: 'Relation Ship', key: '4', type: 'select', slug: 'emergencyContact_relation' },
 ]
 
 const doctorVisits = [
-    { name: 'date', label: 'Date', key: '1', type: 'input' },
-    { name: 'time', label: 'Time', key: '2', type: 'input' },
+    { name: 'date', label: 'Date', key: '1', type: 'date' },
+    // { name: 'time', label: 'Time', key: '2', type: 'time' },
     { name: 'physcianName', label: 'Physican Name', key: '3', type: 'input' },
-    { name: 'physcianType', label: 'Type of Physican', key: '4', type: 'input' },
+    // { name: 'physcianType', label: 'Type of Physican', key: '4', type: 'input' },
     { name: 'reason', label: 'Reason For Appointment', key: '5', type: 'input' },
-    { name: 'nextAppointment', label: 'Next Appointment', key: '6', type: 'input' },
+    { name: 'nextAppointment', label: 'Next Appointment', key: '6', type: 'date' },
 ]
 
 const emergencyRoom = [
-    { name: 'date', label: 'Date', key: '1', type: 'input' },
+    { name: 'date', label: 'Date', key: '1', type: 'date' },
     { name: 'facilityName', label: 'Facility Name', key: '2', type: 'input' },
     { name: 'physcianName', label: 'Physican Name', key: '3', type: 'input' },
     { name: 'reason', label: 'Reason For Emergency', key: '5', type: 'input' },
@@ -78,22 +78,23 @@ const homeCare = [
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
     { name: 'service', label: 'Service', key: '4', type: 'select', slug: 'homeCare_service' },
     { name: 'assistantName', label: 'Name of Assistant', key: '4', type: 'input' },
-    { name: 'noOfHours', label: 'No. of hours (Assistence/week)', key: '3', type: 'input' },
+    { name: 'noOfHours', label: 'No. of hours', key: '3', type: 'input' },
+    { name: 'noOfWeeks', label: 'No. of weeks', key: '3', type: 'select', slug: 'homeCare_noOfWeeks' },
 ]
 
 const medicalTest = [
     { name: 'procedure', label: 'Diagnostic Test', key: '1', type: 'select', slug: 'medicalTest_procedure' },
-    { name: 'date', label: 'Date', key: '2', type: 'input' },
-    { name: 'reason', label: 'Reason for Test ()', key: '3', type: 'input' },
+    { name: 'date', label: 'Date', key: '2', type: 'date' },
+    { name: 'reason', label: 'Reason for Test', key: '3', type: 'input' },
 ]
 
 const medications = [
     { name: 'name', label: 'Medication Name', key: '1', type: 'input' },
     { name: 'dose', label: 'Dose', key: '2', type: 'input' },
     { name: 'frequency', label: 'Frequency', key: '3', type: 'input' },
-    { name: 'startDate', label: 'Start Date', key: '4', type: 'input' },
-    { name: 'endDate', label: 'End Date', key: '5', type: 'input' },
-    { name: 'reason', label: 'Reason for Test', key: '6', type: 'select', slug: 'medications_reason' },
+    { name: 'startDate', label: 'Start Date', key: '4', type: 'date' },
+    { name: 'endDate', label: 'End Date', key: '5', type: 'date' },
+    { name: 'reason', label: 'Reason for Medication', key: '6', type: 'select', slug: 'medications_reason' },
 ]
 
 const equipment = [
@@ -118,24 +119,44 @@ const blood = [
 ]
 
 const laboratoryTest = [
-    { name: 'date', label: 'Date', key: '2', type: 'input' },
-    { name: 'time', label: 'Time', key: '3', type: 'input' },
+    { name: 'date', label: 'Date', key: '2', type: 'date' },
+    { name: 'time', label: 'Time', key: '3', type: 'time' },
     { name: 'procedure', label: 'Laboratory Test', key: '1', type: 'select', slug: 'medicalTest_procedure' },
 ]
 
 const specialCareMedication = [
-    { name: 'date', label: 'Date', key: '2', type: 'input' },
+    { name: 'date', label: 'Date', key: '2', type: 'date' },
     { name: 'procedure', label: 'Medication', key: '1', type: 'select', slug: 'medicalTest_procedure' },
 ]
 
-const vitals = [
-    { name: 'date', label: 'Date', key: '1', type: 'input' },
-    { name: 'time', label: 'Time', key: '2', type: 'input' },
-    { name: 'bp', label: 'Blood Pressure', key: '3', type: 'input' },
-    { name: 'bs', label: 'Blood Sugar', key: '3', type: 'input' },
-    { name: 'resp', label: 'Respirations', key: '3', type: 'input' },
-    { name: 'hr', label: 'Heart Rate', key: '3', type: 'input' },
-    { name: 'temp', label: 'Tempreture', key: '3', type: 'input' },
+const bloodPressure = [
+    { name: 'date', label: 'Date', key: '1', type: 'date' },
+    { name: 'time', label: 'Time', key: '1', type: 'time' },
+    { name: 'bloodPressure', label: 'Blood Pressure', key: '1', type: 'input' },
+]
+
+const bloodSugar = [
+    { name: 'date', label: 'Date', key: '1', type: 'date' },
+    { name: 'time', label: 'Time', key: '1', type: 'time' },
+    { name: 'bloodSugar', label: 'Blood Sugar', key: '1', type: 'input' },
+]
+
+const respiration = [
+    { name: 'date', label: 'Date', key: '1', type: 'date' },
+    { name: 'time', label: 'Time', key: '1', type: 'time' },
+    { name: 'respiration', label: 'Respiration', key: '1', type: 'input' },
+]
+
+const heartRate = [
+    { name: 'date', label: 'Date', key: '1', type: 'date' },
+    { name: 'time', label: 'Time', key: '1', type: 'time' },
+    { name: 'heartRate', label: 'Heart Rate', key: '1', type: 'input' },
+]
+
+const tempreture = [
+    { name: 'date', label: 'Date', key: '1', type: 'date' },
+    { name: 'time', label: 'Time', key: '1', type: 'time' },
+    { name: 'tempreture', label: 'Tempreture', key: '1', type: 'input' },
 ]
 
 const formFields = {
@@ -155,7 +176,11 @@ const formFields = {
     blood,
     laboratoryTest,
     specialCareMedication,
-    vitals
+    bloodPressure,
+    bloodSugar,
+    respiration,
+    heartRate,
+    tempreture
 }
 
 export default formFields;

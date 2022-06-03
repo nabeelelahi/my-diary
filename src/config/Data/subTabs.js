@@ -1,17 +1,30 @@
 import {
-    blood,
-    medicalTest,
-    medications,
+    vitals as vitalsIcon,
+    bloodPressure,
+    blooadSugar,
+    respiration,
+    heartRate,
+    tempreture,
+    laboratoryTest
 } from '~/assets'
 
 const specialCare = [
-    { title: 'Vitals', icon: blood, slug: 'vitals' },
-    { title: 'Laboratory Test', icon: medicalTest, slug: 'laboratoryTest' },
-    { title: 'Medication', icon: medications, slug: 'specialCareMedication' },
+    { title: 'Vitals', icon: vitalsIcon, slug: 'vitals' },
+    { title: 'Laboratory Test', icon: laboratoryTest, slug: 'laboratoryTest' },
+    // { title: 'Medication', icon: medications, slug: 'specialCareMedication' },
+]
+
+const vitals = [
+    { title: 'Blood Pressure', icon: bloodPressure, slug: 'bloodPressure' },
+    { title: 'Blood Sugar', icon: blooadSugar, slug: 'bloodSugar' },
+    { title: 'Respiration', icon: respiration, slug: 'respiration' },
+    { title: 'Heart Rate', icon: heartRate, slug: 'heartRate' },
+    { title: 'Tempreture', icon: tempreture, slug: 'tempreture' },
 ]
 
 const subTabs = {
-    specialCare
+    specialCare,
+    vitals
 }
 
 export default subTabs

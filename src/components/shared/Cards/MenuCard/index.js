@@ -7,7 +7,7 @@ import { styles } from './menuCard'
 export default function MenuCard({ source, title, onPress }) {
 
     return (
-        <TouchableOpacity onPress={() => {}} style={styles.card}>
+        <TouchableOpacity onPress={() => onPress ? onPress() : {}} style={styles.card}>
             <View style={globalStyles.row}>
                 <Image style={styles.icon} source={source || logo} />
                 <Text style={styles.title}>{title}</Text>

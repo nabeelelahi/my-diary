@@ -31,7 +31,7 @@ const physician = {
     city: '',
     state: '',
     phone: '',
-    typeOfCare: '',
+    doctore: '',
 }
 
 const diagnosis = {
@@ -60,9 +60,9 @@ const emergencyContact = {
 
 const doctorVisits = {
     date: '',
-    time: '',
+    // time: '',
     physcianName: '',
-    physcianType: '',
+    // physcianType: '',
     reason: '',
     nextAppointment: '',
 }
@@ -127,14 +127,34 @@ const specialCareMedication = {
     procedure: '',
 }
 
-const vitals = {
+const bloodPressure = {
     date: '',
     time: '',
-    bp: '',
-    bs: '',
-    resp: '',
-    hr: '',
-    temp: '',
+    bloodPressure: '',
+}
+
+const bloodSugar = {
+    date: '',
+    time: '',
+    bloodSugar: '',
+}
+
+const respiration = {
+    date: '',
+    time: '',
+    respiration: '',
+}
+
+const heartRate = {
+    date: '',
+    time: '',
+    heartRate: '',
+}
+
+const tempreture = {
+    date: '',
+    time: '',
+    tempreture: '',
 }
 
 const initialValues = {
@@ -154,7 +174,11 @@ const initialValues = {
     equipment,
     laboratoryTest,
     specialCareMedication,
-    vitals
+    bloodPressure,
+    bloodSugar,
+    respiration,
+    heartRate,
+    tempreture
 }
 
 export default initialValues

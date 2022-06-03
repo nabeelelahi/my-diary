@@ -60,7 +60,7 @@ const physician = yup.object({
         .required(),
     phone: yup.number()
         .required(),
-    typeOfCare: yup.string()
+    doctore: yup.string()
         .required(),
 })
 
@@ -105,12 +105,12 @@ const emergencyContact = yup.object({
 const doctorVisits = yup.object({
     date: yup.string()
         .required(),
-    time: yup.string()
-        .required(),
+    // time: yup.string()
+    //     .required(),
     physcianName: yup.string()
         .required(),
-    physcianType: yup.string()
-        .required(),
+    // physcianType: yup.string()
+    //     .required(),
     reason: yup.string()
         .required(),
     nextAppointment: yup.string()
@@ -216,20 +216,48 @@ const specialCareMedication = {
         .required(),
 }
 
-const vitals = {
+const bloodPressure = {
     date: yup.string()
         .required(),
     time: yup.string()
         .required(),
-    bp: yup.string()
+    bloodPressure: yup.string()
         .required(),
-    bs: yup.string()
+}
+
+const bloodSugar = {
+    date: yup.string()
         .required(),
-    resp: yup.string()
+    time: yup.string()
         .required(),
-    hr: yup.number()
+    bloodSugar: yup.string()
         .required(),
-    temp: yup.number()
+}
+
+const respiration = {
+    date: yup.string()
+        .required(),
+    time: yup.string()
+        .required(),
+    respiration: yup.string()
+        .required(),
+}
+
+const heartRate = {
+    date: yup.string()
+        .required(),
+    time: yup.string()
+        .required(),
+    heartRate: yup.string()
+        .required(),
+}
+
+const tempreture = {
+    date: yup.string()
+        .required(),
+    time: yup.string()
+        .required(),
+    tempreture: yup.string()
         .required(),
 }
 
@@ -249,7 +277,11 @@ const schemas = {
     equipment,
     laboratoryTest,
     specialCareMedication,
-    vitals
+    bloodPressure,
+    bloodSugar,
+    respiration,
+    heartRate,
+    tempreture
 }
 
 export default schemas

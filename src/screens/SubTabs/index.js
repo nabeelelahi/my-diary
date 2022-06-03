@@ -11,8 +11,8 @@ export default function SubTabs({ navigation, route }) {
     const data = route.params;
 
   function redirect(item) {
-    if (item.slug === 'specialCare') console.log(item.slug)
-    else navigation.navigate('ViewScreen', item) 
+    if (item.slug === 'vitals') navigation.navigate('SubTabs', item)
+    else navigation.navigate('ViewScreen', item)  
   }
 
   return (

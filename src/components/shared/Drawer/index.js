@@ -10,6 +10,7 @@ import Avatar from '~/components/shared/Avatar';
 import MenuCard from '~/components/shared/Cards/MenuCard';
 import colors from '~/constants/colors';
 import {
+    home,
     settings,
     faqs,
     contact
@@ -19,6 +20,8 @@ import { styles } from './drawer'
 
 
 export default function DrawerComp(props) {
+
+    const {navigation} = props
 
     return (
         <LinearGradient
@@ -35,6 +38,11 @@ export default function DrawerComp(props) {
                             <Text style={styles.title}>Inga</Text>
                         </View>
                         <View>
+                            <MenuCard 
+                            onPress={() => navigation.navigate('Dahboard')} 
+                            source={home} 
+                            title={'Home'}
+                             />
                             <MenuCard source={settings} title={'Settings'} />
                             <MenuCard source={faqs} title={"FAQ's"} />
                             <MenuCard source={contact} title={'Contact'} />

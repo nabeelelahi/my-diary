@@ -21,11 +21,11 @@ export default function ListCard({ item, customStyles }) {
     dynamicStyle.height = metrices.HEIGHT(height)
 
     return (
-        <TouchableOpacity onPress={() => { }} style={dynamicStyle}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => { }} style={dynamicStyle}>
             {
                 data &&
                 Object.entries(data)?.map(([key, value]) => (
-                    <View style={{ ...styles.column, ...globalStyles.centerContent }}>
+                    <View key={key} style={{ ...styles.column, ...globalStyles.centerContent }}>
                         <Text style={styles.key}>{capitalizeString(key)}:</Text>
                         <Text style={styles.value}>Value</Text>
                     </View>

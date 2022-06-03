@@ -1,12 +1,35 @@
-import React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { FormControl, Select } from "native-base";
+import DateTimePickerModal from 'react-native-modal-datetime-picker'
+import moment from 'moment'
 import options from '~/config/Data/options';
 import { styles } from "./baseInputs";
 
 export default function BaseInput({ item, data }) {
 
     const props = data;
+    const [isVisible, setIsVisible] = useState(false)
+    const [date, setDate] = useState('')
+    const [time, setTime] = useState('')
+
+    useEffect(() => {
+        setDate('')
+        setTime('')
+        setIsVisible(false)
+    }, [item])
+
+    function confirmTime(value) {
+        setTime(moment(value).format('HH:mm'))
+        props.values[item.name] = moment(value).format('HH:mm')
+        setIsVisible(false)
+    }
+    
+    function confirmDate(value) {
+        setDate(moment(value).format('DD-MMM-YYYY'))
+        props.values[item.name] = moment(value).format('DD-MMM-YYYY')
+        setIsVisible(false)
+    }
 
     if (item) {
         if (item.type === 'input') {
@@ -46,6 +69,44 @@ export default function BaseInput({ item, data }) {
                             }
                         </Select>
                     </FormControl>
+                </View>
+            )
+        }
+        else if (item.type === 'date') {
+            return (
+                <View>
+                <Text style={styles.label}>{item.label}:</Text>
+                <TouchableOpacity
+                    onPress={() => setIsVisible(true)}
+                    style={styles.box}
+                >
+                    <Text style={styles.text}>{date}</Text>
+                </TouchableOpacity>
+                <DateTimePickerModal
+                    isVisible={isVisible}
+                    mode="date"
+                    onConfirm={confirmDate}
+                    onCancel={() => isVisible(false)}
+                />
+            </View>
+            )
+        }
+        else if (item.type === 'time') {
+            return (
+                <View>
+                    <Text style={styles.label}>{item.label}:</Text>
+                    <TouchableOpacity
+                        onPress={() => setIsVisible(true)}
+                        style={styles.box}
+                    >
+                        <Text style={styles.text}>{time}</Text>
+                    </TouchableOpacity>
+                    <DateTimePickerModal
+                        isVisible={isVisible}
+                        mode="time"
+                        onConfirm={confirmTime}
+                        onCancel={() => isVisible(false)}
+                    />
                 </View>
             )
         }

@@ -24,6 +24,14 @@ import settings from './images/Settings.png'
 import faqs from './images/Faqs.png'
 import contact from './images/Contact.png'
 import plus from './images/Plus.png'
+import vitals from './images/Vitals.png'
+import bloodPressure from './images/BloodPressure.png'
+import blooadSugar from './images/BloodSugar.png'
+import respiration from './images/Respiration.png'
+import heartRate from './images/HeartRate.png'
+import tempreture from './images/Tempreture.png'
+import laboratoryTest from './images/Laboratory-Test.png'
+import home from './images/Home.png'
 
 export {
     logo,
@@ -51,5 +59,13 @@ export {
     settings,
     faqs,
     contact,
-    plus
+    plus,
+    vitals,
+    bloodPressure,
+    blooadSugar,
+    respiration,
+    heartRate,
+    tempreture,
+    laboratoryTest,
+    home
 }

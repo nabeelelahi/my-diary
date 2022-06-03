@@ -22,6 +22,7 @@ export default function GridCard({ item, index = 1, onPress }) {
     return (
         <TouchableOpacity
             onPress={onPress}
+            activeOpacity={0.7}
             style={{ ...styles.opacity, width }}
         >
             <LinearGradient

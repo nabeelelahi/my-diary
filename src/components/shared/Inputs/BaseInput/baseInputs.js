@@ -15,6 +15,12 @@ export const styles = StyleSheet.create({
         borderRadius: 2.5,
         borderWidth: 1,
         borderColor: colors.baseWhite,
+        color: colors.baseWhite,
+        fontSize: 14,
+        paddingHorizontal: 10,
+    },
+    text: {
+        color: colors.baseWhite,
         fontSize: 14
     },
     select: {

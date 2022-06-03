@@ -75,7 +75,7 @@ const medicalTest_procedure = [
     { name: 'Radiation', value: 'radiation' },
     { name: 'Stress Test', value: 'stress-test' },
     { name: 'Echocardiogram', value: 'echocardiogram' },
-    { name: 'other', value: 'other' },
+    { name: 'Other', value: 'other' },
 ]
 
 const homeCare_service = [
@@ -84,6 +84,7 @@ const homeCare_service = [
     { name: 'Speech Therapy', value: 'speech-therapy' },
     { name: 'Medical Social Worker', value: 'medical-social-worker' },
     { name: 'Home Health Aide', value: 'home-health-aide' },
+    { name: 'Occupational Therapy', value: 'Occupationao-therapy' },
 ]
 
 const blood_bloodType = [
@@ -97,6 +98,13 @@ const blood_bloodType = [
     { name: 'AB-', value: 'AB-' },
 ]
 
+const homeCare_noOfWeeks = [
+    { name: '1-10', value: '1-10' },
+    { name: '11-20', value: '11-20' },
+    { name: '21-30', value: '21-30' },
+    { name: '31-40', value: '31-40' },
+]
+
 const options = {
     vaccinations_name,
     medications_reason,
@@ -105,7 +113,8 @@ const options = {
     medicalTest_procedure,
     homeCare_service,
     equipment,
-    blood_bloodType
+    blood_bloodType,
+    homeCare_noOfWeeks
 }
 
 export default options
