@@ -22,7 +22,8 @@ const medications_reason = [
     { name: 'EYES', value: 'EYES' },
     { name: 'FEVER', value: 'FEVER' },
     { name: 'FLUID', value: 'FLUID' },
-    { name: 'HARMONES', value: 'HARMONES' },
+    { name: 'HORMONES', value: 'HORMONES' },
+    { name: 'DEMENTIA', value: 'DEMENTIA' },
     { name: 'HEART', value: 'HEART' },
     { name: 'KIDNEY', value: 'KIDNEY' },
     { name: 'LUNGS', value: 'LUNGS' },
@@ -98,11 +99,22 @@ const blood_bloodType = [
     { name: 'AB-', value: 'AB-' },
 ]
 
-const homeCare_noOfWeeks = [
+const homeCare_noOfHours = [
     { name: '1-10', value: '1-10' },
     { name: '11-20', value: '11-20' },
     { name: '21-30', value: '21-30' },
     { name: '31-40', value: '31-40' },
+]
+
+const inpatientFacility_type = [
+    { name: 'Hospital', values: 'hospital' },
+    { name: 'Hospice', values: 'hospice' },
+    { name: 'LTAC', values: 'LTAC' },
+    { name: 'SNF', values: 'SNF' },
+    { name: 'Rehabilitation', values: 'rehabilitation' },
+    { name: 'Behavioral / Mental', values: 'mental' },
+    { name: "Nursing Home", values: 'nursing-home' }
+
 ]
 
 const options = {
@@ -114,7 +126,8 @@ const options = {
     homeCare_service,
     equipment,
     blood_bloodType,
-    homeCare_noOfWeeks
+    homeCare_noOfHours,
+    inpatientFacility_type
 }
 
 export default options

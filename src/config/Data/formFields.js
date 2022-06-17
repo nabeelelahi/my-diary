@@ -27,12 +27,12 @@ const physician = [
     { name: 'city', label: 'City', key: '3', type: 'input' },
     { name: 'state', label: 'State', key: '4', type: 'input' },
     { name: 'phone', label: 'TelePhone #', key: '5', type: 'input' },
-    { name: 'doctore', label: 'Doctore', key: '6', type: 'input' },
+    { name: 'typeOfPhysician', label: 'Type Of Physician', key: '6', type: 'input' },
 ]
 
 const diagnosis = [
     { name: 'illness', label: 'Medical Problem/Illness', key: '1', type: 'input' },
-    { name: 'date', label: 'Date Of diagnosis/Illness', key: '2', type: 'date' },
+    { name: 'date', label: 'Date Of Diagnosis/Illness', key: '2', type: 'date' },
 ]
 
 const surgeries = [
@@ -58,7 +58,7 @@ const emergencyContact = [
 const doctorVisits = [
     { name: 'date', label: 'Date', key: '1', type: 'date' },
     // { name: 'time', label: 'Time', key: '2', type: 'time' },
-    { name: 'physcianName', label: 'Physican Name', key: '3', type: 'input' },
+    { name: 'physcianName', label: 'Doctor Name', key: '3', type: 'input' },
     // { name: 'physcianType', label: 'Type of Physican', key: '4', type: 'input' },
     { name: 'reason', label: 'Reason For Appointment', key: '5', type: 'input' },
     { name: 'nextAppointment', label: 'Next Appointment', key: '6', type: 'date' },
@@ -78,12 +78,12 @@ const homeCare = [
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
     { name: 'service', label: 'Service', key: '4', type: 'select', slug: 'homeCare_service' },
     { name: 'assistantName', label: 'Name of Assistant', key: '4', type: 'input' },
-    { name: 'noOfHours', label: 'No. of hours', key: '3', type: 'input' },
-    { name: 'noOfWeeks', label: 'No. of weeks', key: '3', type: 'select', slug: 'homeCare_noOfWeeks' },
+    { name: 'noOfHours', label: 'No. of hours', key: '3', type: 'select', slug: 'homeCare_noOfHours' },
+    { name: 'noOfWeeks', label: 'No. of weeks', key: '3', type: 'input' },
 ]
 
 const medicalTest = [
-    { name: 'procedure', label: 'Diagnostic Test', key: '1', type: 'select', slug: 'medicalTest_procedure' },
+    { name: 'procedure', label: 'Medical Test', key: '1', type: 'select', slug: 'medicalTest_procedure' },
     { name: 'date', label: 'Date', key: '2', type: 'date' },
     { name: 'reason', label: 'Reason for Test', key: '3', type: 'input' },
 ]
@@ -159,6 +159,16 @@ const tempreture = [
     { name: 'tempreture', label: 'Tempreture', key: '1', type: 'input' },
 ]
 
+const inpatientFacility = [
+    { name: 'admissionDate', label: 'Date Admitted', key: '1', type: 'date' },
+    { name: 'dischargeDate', label: 'Date Discharge', key: '2', type: 'date' },
+    { name: 'reason', label: 'Reason for Admission', key: '3', type: 'input' },
+    { name: 'name', label: 'Name of Inpatient facility', key: '4', type: 'input' },
+    { name: 'type', label: 'Type of inpatient facility', key: '5', type: 'select', slug: 'inpatientFacility_type' },
+    { name: 'advancedDirective', label: 'I have prepared an Advanced Directive for Healthcare', key: '6', type: 'select', slug: 'equipment' },
+    { name: 'resuscitateOrder', label: 'I have a Do No Resuscitate Order', key: '7', type: 'select', slug: 'equipment' },
+]
+
 const formFields = {
     personalInfo,
     insurance,
@@ -180,7 +190,8 @@ const formFields = {
     bloodSugar,
     respiration,
     heartRate,
-    tempreture
+    tempreture,
+    inpatientFacility
 }
 
 export default formFields;

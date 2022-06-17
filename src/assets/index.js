@@ -32,6 +32,7 @@ import heartRate from './images/HeartRate.png'
 import tempreture from './images/Tempreture.png'
 import laboratoryTest from './images/Laboratory-Test.png'
 import home from './images/Home.png'
+import inpatientFacility from './images/Inpatient.png'
 
 export {
     logo,
@@ -67,5 +68,6 @@ export {
     heartRate,
     tempreture,
     laboratoryTest,
-    home
+    home,
+    inpatientFacility
 }

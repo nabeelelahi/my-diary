@@ -31,7 +31,7 @@ const physician = {
     city: '',
     state: '',
     phone: '',
-    doctore: '',
+    typeOfPhysician: '',
 }
 
 const diagnosis = {
@@ -157,6 +157,16 @@ const tempreture = {
     tempreture: '',
 }
 
+const inpatientFacility = {
+    admissionDate: '',
+    dischargeDate: '',
+    reason: '',
+    name: '',
+    type: '',
+    advancedDirective: '',
+    resuscitateOrderpe: '',
+}
+
 const initialValues = {
     personalInfo,
     blood,
@@ -178,7 +188,8 @@ const initialValues = {
     bloodSugar,
     respiration,
     heartRate,
-    tempreture
+    tempreture,
+    inpatientFacility
 }
 
 export default initialValues

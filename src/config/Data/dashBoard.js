@@ -13,7 +13,8 @@ import {
     emergencyRoom,
     doctorVisits,
     homeCare,
-    emergencyContact
+    emergencyContact,
+    inpatientFacility
 } from '~/assets'
 
 export const dashBoardOptions = [
@@ -27,6 +28,7 @@ export const dashBoardOptions = [
     { title: 'Surgeries', icon: surgeries, slug: 'surgeries' },
     { title: 'Medications', icon: medications, slug: 'medications' },
     { title: 'Medical Equipment', icon: equipment, slug: 'equipment' },
+    { title: 'Inpatient Facility', icon: inpatientFacility, slug: 'inpatientFacility' },
     { title: 'Special Care', icon: specialCare, slug: 'specialCare' },
     { title: 'Emergency Room', icon: emergencyRoom, slug: 'emergencyRoom' },
     { title: 'Doctor Visits', icon: doctorVisits, slug: 'doctorVisits' },

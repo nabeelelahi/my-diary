@@ -60,7 +60,7 @@ const physician = yup.object({
         .required(),
     phone: yup.number()
         .required(),
-    doctore: yup.string()
+    typeOfPhysician: yup.string()
         .required(),
 })
 
@@ -261,6 +261,23 @@ const tempreture = {
         .required(),
 }
 
+const inpatientFacility = {
+    admissionDate: yup.string()
+        .required(),
+    dischargeDate: yup.string()
+        .required(),
+    reason: yup.string()
+        .required(),
+    name: yup.string()
+        .required(),
+    type: yup.string()
+        .required(),
+    advancedDirective: yup.string()
+        .required(),
+    resuscitateOrderpe: yup.string()
+        .required(),
+}
+
 const schemas = {
     personalInfo,
     insurance,
@@ -281,7 +298,8 @@ const schemas = {
     bloodSugar,
     respiration,
     heartRate,
-    tempreture
+    tempreture,
+    inpatientFacility
 }
 
 export default schemas
