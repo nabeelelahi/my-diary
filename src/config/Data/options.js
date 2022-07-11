@@ -5,6 +5,12 @@ const vaccinations_name = [
     { name: 'Covid 19', value: 'covid-19' },
 ]
 
+const personalInfo_sex = [
+    { name: 'Male', value: 'male' },
+    { name: 'Female', value: 'female' },
+    { name: 'Other', value: 'other' },
+]
+
 const medications_reason = [
     { name: 'ALZHEIMER', value: 'ALZHEIMER' },
     { name: 'ANXIETY', value: 'ANXIETY' },
@@ -119,6 +125,7 @@ const inpatientFacility_type = [
 
 const options = {
     vaccinations_name,
+    personalInfo_sex,
     medications_reason,
     emergencyContact_relation,
     emergencyRoom_hospitalAdmission,

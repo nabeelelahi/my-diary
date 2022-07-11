@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -8,7 +8,9 @@ import {
     TouchableWithoutFeedback,
     Keyboard
 } from 'react-native'
+import { _login } from '~/repositories/auth';
 import { styles } from './login';
+import FlashMessage from "react-native-flash-message";
 import globalStyles from '~/assets/styles/globalStyles';
 import {
     arroba,
@@ -35,11 +37,12 @@ const schema = yup.object({
 
 export default function Login({ navigation }) {
 
+    const [isLoading, setIsLoading] = useState(false)
+
     const inputs = [
         { name: 'email', placeHolder: 'Email...', source: arroba, key: '1' },
         { name: 'password', placeHolder: 'Password...', source: password, key: '3' }
     ]
-
 
     return (
         <ScrollView>
@@ -50,7 +53,7 @@ export default function Login({ navigation }) {
                         <Formik
                             validationSchema={schema}
                             initialValues={{ email: '', password: '' }}
-                            onSubmit={(values) => console.log(values)}
+                            onSubmit={(values) => _login(values, navigation, setIsLoading)}
                         >
                             {(props) => {
                                 return (
@@ -64,10 +67,10 @@ export default function Login({ navigation }) {
                                                 />
                                             ))
                                         }
-                                        <Text style={styles.forgotPassword}>Forgot Password?</Text>
-                                        <TouchableOpacity onPress={() => navigation.navigate('OurVision')}>
+                                        <TouchableOpacity onPress={props.handleSubmit}>
                                             <Button
                                                 title="Login"
+                                                isLoading={isLoading}
                                                 style={{ ...globalStyles.baseButton, ...styles.button }}
                                                 textStyle={{ ...globalStyles.baseButtonText, ...styles.buttonText }}
                                             />
@@ -88,6 +91,7 @@ export default function Login({ navigation }) {
                     </GradientContainer>
                 </TouchableWithoutFeedback>
             </KeyboardAvoidingView>
+            <FlashMessage position="top" />
         </ScrollView>
     )
 

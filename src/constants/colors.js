@@ -3,7 +3,8 @@ const colors = {
     secondary: '#f2eaba',
     baseWhite: '#E5E5E5',
     baseBlack: '#000000',
-    baseGradient: ['#141E30', '#243B55']
+    baseGradient: ['#141E30', '#243B55'],
+    validationRed: '#FF4949'
 }
 
 export default colors;

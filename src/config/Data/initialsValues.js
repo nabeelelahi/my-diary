@@ -1,13 +1,13 @@
 const personalInfo = {
-    name: '',
-    address: '',
-    phone: '',
-    cellPhone: '',
-    height: '',
-    weight: '',
-    age: '',
-    sex: '',
-    allergies: '',
+    name: 'Nabeel',
+    address: 'nabeel ka ghar ',
+    phone: '03160294629',
+    cellPhone: '03160294629',
+    height: "5'2",
+    weight: '65',
+    age: '21',
+    sex: 'male',
+    allergies: 'nothing',
 }
 
 const blood = {

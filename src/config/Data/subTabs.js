@@ -17,7 +17,7 @@ const specialCare = [
 const vitals = [
     { title: 'Blood Pressure', icon: bloodPressure, slug: 'bloodPressure' },
     { title: 'Blood Sugar', icon: blooadSugar, slug: 'bloodSugar' },
-    { title: 'Respirations', icon: respiration, slug: 'respirations' },
+    { title: 'Respirations', icon: respiration, slug: 'respiration' },
     { title: 'Heart Rate', icon: heartRate, slug: 'heartRate' },
     { title: 'Tempreture', icon: tempreture, slug: 'tempreture' },
 ]

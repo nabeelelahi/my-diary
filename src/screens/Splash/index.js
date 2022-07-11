@@ -1,13 +1,10 @@
 import React, { useRef, useEffect } from 'react';
-// import { useFocusEffect } from "@react-navigation/native";
-import { Animated, Image, View, Text } from 'react-native';
-// import AsyncStorage from '@react-native-async-storage/async-storage'
+import { Animated, Image, Text } from 'react-native';
 import { styles } from './splash';
 import { logo } from '~/assets';
 import globalStyles from '~/assets/styles/globalStyles';
 import GradientContainer from '~/components/shared/GradientContainer';
-// import { http } from '@services';
-// import NetInfo from "@react-native-community/netinfo";
+import storage from '~/helpers/storage'
 
 const FadeInView = (props) => {
 
@@ -38,9 +35,19 @@ const FadeInView = (props) => {
 
 export default function Splash({ navigation }) {
 
-useEffect(() => {
-  setTimeout(() => navigation.navigate('Disclaimer'), 1500)
-})
+  useEffect(() => {
+    navigate()
+  }, [])
+
+  async function navigate() {
+    const user = await storage.get('user')
+    if (user) {
+      navigation.navigate('Home')
+    }
+    else {
+      navigation.navigate('Disclaimer')
+    }
+  }
 
   return (
     <GradientContainer>

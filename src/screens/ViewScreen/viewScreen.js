@@ -20,5 +20,19 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 1,
+    },
+    flexView: {
+        flex: 1,
+        height: metrices.HEIGHT(0.75),
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    noData: {
+        height: metrices.HEIGHT(0.20),
+    },
+    noDataText:{
+        fontSize: 20,
+        color: colors.primary,
+        fontWeight: 'bold'
     }
 })

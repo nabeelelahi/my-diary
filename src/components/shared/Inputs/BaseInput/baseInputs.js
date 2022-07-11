@@ -19,6 +19,12 @@ export const styles = StyleSheet.create({
         fontSize: 14,
         paddingHorizontal: 10,
     },
+    boxWhite: {
+        borderColor: colors.baseWhite,
+    },
+    boxRed: {
+        borderColor: colors.validationRed,
+    },
     text: {
         color: colors.baseWhite,
         fontSize: 14
@@ -40,5 +46,10 @@ export const styles = StyleSheet.create({
     label: {
         fontSize: 12,
         color: colors.baseWhite
+    },
+    errtxt: {
+        color: colors.validationRed,
+        textAlign: 'center',
+        fontWeight: 'bold'
     }
 })

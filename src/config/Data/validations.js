@@ -281,6 +281,7 @@ const inpatientFacility = {
 const schemas = {
     personalInfo,
     insurance,
+    blood,
     physician,
     diagnosis,
     surgeries,

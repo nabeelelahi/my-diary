@@ -12,6 +12,8 @@ export default function BaseInput({ item, data }) {
     const [isVisible, setIsVisible] = useState(false)
     const [date, setDate] = useState('')
     const [time, setTime] = useState('')
+    const [value, setValue] = useState('')
+    const [boxStyles, setBoxStyles] = useState({ ...styles.box, ...styles.boxWhite })
 
     useEffect(() => {
         setDate('')
@@ -19,17 +21,37 @@ export default function BaseInput({ item, data }) {
         setIsVisible(false)
     }, [item])
 
+    useEffect(() => {
+        if (props.touched[item.name]) {
+            if (props.errors[item.name]) {
+                setBoxStyles({ ...styles.box, ...styles.boxRed })
+            }
+            else {
+                setBoxStyles({ ...styles.box, ...styles.boxWhite })
+            }
+        }
+        else {
+            setBoxStyles({ ...styles.box, ...styles.boxWhite })
+        }
+    }, [props?.touched[item.name], props?.errors[item.name]])
+
     function confirmTime(value) {
         setTime(moment(value).format('HH:mm'))
         props.values[item.name] = moment(value).format('HH:mm')
         setIsVisible(false)
     }
-    
+
     function confirmDate(value) {
         setDate(moment(value).format('DD-MMM-YYYY'))
         props.values[item.name] = moment(value).format('DD-MMM-YYYY')
         setIsVisible(false)
     }
+
+    function valueChange(value){
+        props.values[item.name] = value
+        setValue(value)
+    }
+
 
     if (item) {
         if (item.type === 'input') {
@@ -37,14 +59,14 @@ export default function BaseInput({ item, data }) {
                 <View>
                     <Text style={styles.label}>{item.label}:</Text>
                     <TextInput
-                        style={styles.box}
+                        style={boxStyles}
                         placeholder={item.placeHolder}
                         // placeholderTextColor={colors.secondary}
                         value={props?.values[item.name]}
                         onChangeText={props?.handleChange(item.name)}
                         onBlur={props?.handleBlur(item.name)}
                     />
-                    {/* <Text style={styles.errtxt}>{props?.touched.email && props?.errors.email}</Text> */}
+                    <Text style={styles.errtxt}>{props?.touched[item.name] && props?.errors[item.name]}</Text>
                 </View>
             )
         }
@@ -54,9 +76,9 @@ export default function BaseInput({ item, data }) {
                     <Text style={styles.label}>{item.label}:</Text>
                     <FormControl style={styles.select}>
                         <Select
-                            selectedValue={''}
-                            value={props?.values[item.name]}
-                            onValueChange={props.handleChange(item.name)}
+                            selectedValue={value}
+                            value={value}
+                            onValueChange={valueChange}
                         >
                             {
                                 options[item?.slug]?.map((option) => (
@@ -69,26 +91,28 @@ export default function BaseInput({ item, data }) {
                             }
                         </Select>
                     </FormControl>
+                    <Text style={styles.errtxt}>{props?.touched[item.name] && props?.errors[item.name]}</Text>
                 </View>
             )
         }
         else if (item.type === 'date') {
             return (
                 <View>
-                <Text style={styles.label}>{item.label}:</Text>
-                <TouchableOpacity
-                    onPress={() => setIsVisible(true)}
-                    style={styles.box}
-                >
-                    <Text style={styles.text}>{date}</Text>
-                </TouchableOpacity>
-                <DateTimePickerModal
-                    isVisible={isVisible}
-                    mode="date"
-                    onConfirm={confirmDate}
-                    onCancel={() => isVisible(false)}
-                />
-            </View>
+                    <Text style={styles.label}>{item.label}:</Text>
+                    <TouchableOpacity
+                        onPress={() => setIsVisible(true)}
+                        style={styles.box}
+                    >
+                        <Text style={styles.text}>{date}</Text>
+                    </TouchableOpacity>
+                    <DateTimePickerModal
+                        isVisible={isVisible}
+                        mode="date"
+                        onConfirm={confirmDate}
+                        onCancel={() => isVisible(false)}
+                    />
+                    <Text style={styles.errtxt}>{props?.touched[item.name] && props?.errors[item.name]}</Text>
+                </View>
             )
         }
         else if (item.type === 'time') {
@@ -107,6 +131,7 @@ export default function BaseInput({ item, data }) {
                         onConfirm={confirmTime}
                         onCancel={() => isVisible(false)}
                     />
+                    <Text style={styles.errtxt}>{props?.touched[item.name] && props?.errors[item.name]}</Text>
                 </View>
             )
         }

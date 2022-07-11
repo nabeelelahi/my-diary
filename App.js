@@ -7,10 +7,6 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar
-} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { NativeBaseProvider } from "native-base";
 import Splash from '~/screens/Splash'
@@ -28,7 +24,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <NativeBaseProvider>
-        <MainDrawer />
+        <MainStack />
       </NativeBaseProvider>
     </NavigationContainer>
   );

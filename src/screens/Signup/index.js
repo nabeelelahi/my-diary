@@ -1,13 +1,14 @@
-import React from 'react';
-import { 
-    View, 
-    Text, 
+import React, { useState } from 'react';
+import {
+    View,
+    Text,
     TouchableOpacity,
     TouchableWithoutFeedback,
     KeyboardAvoidingView,
     ScrollView,
     Keyboard
- } from 'react-native'
+} from 'react-native'
+import FlashMessage from "react-native-flash-message";
 import { styles } from './signup';
 import globalStyles from '~/assets/styles/globalStyles';
 import {
@@ -18,6 +19,7 @@ import {
 import GradientContainer from '~/components/shared/GradientContainer';
 import Button from '~/components/shared/Buttons/Button';
 import AuthInput from '~/components/shared/Inputs/AuthInput'
+import { _signUp } from '~/repositories/auth'
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
@@ -45,52 +47,55 @@ export default function Signup({ navigation }) {
         { name: 'password', placeHolder: 'Password...', source: password, key: '3' },
     ]
 
+    const [isLoading, setIsLoading] = useState(false) 
 
     return (
         <ScrollView>
             <KeyboardAvoidingView>
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <GradientContainer topContainer={true} contentType='form'>
-                    <Text style={{ ...globalStyles.title, ...styles.title }}>Sign Up</Text>
-                    <Formik
-                        validationSchema={schema}
-                        initialValues={{ email: '', password: '', name: '' }}
-                        onSubmit={(values) => console.log(values)}
-                    >
-                        {(props) => {
-                            return (
-                                <>
-                                    {
-                                        inputs.map(item => (
-                                            <AuthInput
-                                                key={item.key}
-                                                item={item}
-                                                data={props}
+                    <GradientContainer topContainer={true} contentType='form'>
+                        <Text style={{ ...globalStyles.title, ...styles.title }}>Sign Up</Text>
+                        <Formik
+                            validationSchema={schema}
+                            initialValues={{ email: '', password: '', name: '' }}
+                            onSubmit={(values) => _signUp(values, navigation, setIsLoading)}
+                        >
+                            {(props) => {
+                                return (
+                                    <>
+                                        {
+                                            inputs.map(item => (
+                                                <AuthInput
+                                                    key={item.key}
+                                                    item={item}
+                                                    data={props}
+                                                />
+                                            ))
+                                        }
+                                        <TouchableOpacity onPress={props.handleSubmit}>
+                                            <Button
+                                                title="Continue"
+                                                isLoading={isLoading}
+                                                style={{ ...globalStyles.baseButton, ...styles.button }}
+                                                textStyle={{ ...globalStyles.baseButtonText, ...styles.buttonText }}
                                             />
-                                        ))
-                                    }
-                                    <TouchableOpacity onPress={props.handleSubmit}>
-                                        <Button
-                                            title="Continue"
-                                            style={{ ...globalStyles.baseButton, ...styles.button }}
-                                            textStyle={{ ...globalStyles.baseButtonText, ...styles.buttonText }}
-                                        />
-                                    </TouchableOpacity>
-                                    <View style={{ ...globalStyles.dontHaveAccountBox, ...globalStyles.centerContent }}>
-
-                                        <Text style={globalStyles.dontHaveAnAccountText}>Joined us before?</Text>
-                                        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                                            <Text style={globalStyles.dontHaveAnAccountLink}>Login</Text>
                                         </TouchableOpacity>
-                                    </View>
-                                </>
-                            )
-                        }
-                        }
-                    </Formik>
-                </GradientContainer>
-            </TouchableWithoutFeedback>
-        </KeyboardAvoidingView>
+                                        <View style={{ ...globalStyles.dontHaveAccountBox, ...globalStyles.centerContent }}>
+
+                                            <Text style={globalStyles.dontHaveAnAccountText}>Joined us before?</Text>
+                                            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                                                <Text style={globalStyles.dontHaveAnAccountLink}>Login</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </>
+                                )
+                            }
+                            }
+                        </Formik>
+                    </GradientContainer>
+                </TouchableWithoutFeedback>
+            </KeyboardAvoidingView>
+            <FlashMessage position="top" />
         </ScrollView >
     )
 

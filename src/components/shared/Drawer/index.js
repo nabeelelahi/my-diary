@@ -16,12 +16,12 @@ import {
     contact
 } from '~/assets'
 import { styles } from './drawer'
-
+import logout from '~/helpers/logout'
 
 
 export default function DrawerComp(props) {
 
-    const {navigation} = props
+    const { navigation } = props;
 
     return (
         <LinearGradient
@@ -38,14 +38,19 @@ export default function DrawerComp(props) {
                             <Text style={styles.title}>Inga</Text>
                         </View>
                         <View>
-                            <MenuCard 
-                            onPress={() => navigation.navigate('Dahboard')} 
-                            source={home} 
-                            title={'Home'}
-                             />
+                            <MenuCard
+                                onPress={() => navigation.navigate('Dahboard')}
+                                source={home}
+                                title={'Home'}
+                            />
                             <MenuCard source={settings} title={'Settings'} />
                             <MenuCard source={faqs} title={"FAQ's"} />
                             <MenuCard source={contact} title={'Contact'} />
+                            <MenuCard
+                                onPress={() => logout(navigation)}
+                                source={contact}
+                                title={'Logout'}
+                            />
                         </View>
                     </Drawer.Section>
                 </View>

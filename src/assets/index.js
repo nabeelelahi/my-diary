@@ -33,6 +33,8 @@ import tempreture from './images/Tempreture.png'
 import laboratoryTest from './images/Laboratory-Test.png'
 import home from './images/Home.png'
 import inpatientFacility from './images/Inpatient.png'
+import noData from './images/No-Data.png'
+import noInternet from './images/No-Internet.png'
 
 export {
     logo,
@@ -69,5 +71,7 @@ export {
     tempreture,
     laboratoryTest,
     home,
-    inpatientFacility
+    inpatientFacility,
+    noData,
+    noInternet
 }

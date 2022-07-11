@@ -6,7 +6,7 @@ const personalInfo = [
     { name: 'height', label: 'Height', key: '5', type: 'input' },
     { name: 'weight', label: 'Weight', key: '6', type: 'input' },
     { name: 'age', label: 'Age', key: '7', type: 'input' },
-    { name: 'sex', label: 'Sex', key: '8', type: 'select' },
+    { name: 'sex', label: 'Sex', key: '8', type: 'select', slug: 'personalInfo_sex' },
     { name: 'allergies', label: 'Allergies', key: '0', type: 'input' },
 ]
 

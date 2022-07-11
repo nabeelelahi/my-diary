@@ -7,7 +7,7 @@ import Signup from '~/screens/Signup';
 import Login from '~/screens/Login';
 import Disclaimer from '~/screens/Disclaimer';
 import OurVision from '~/screens/OurVision';
-// import MainDrawer from '~/navigations/mainDrawer'
+import Home from './mainDrawer'
 
 const Stack = createStackNavigator();
 
@@ -19,8 +19,7 @@ export default function MainStack() {
       <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
       <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }} />
       <Stack.Screen name="OurVision" component={OurVision} options={{ headerShown: false }} />
-      <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }} />
-      <Stack.Screen name="FormScreen" component={FormScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
       {/* <Stack.Screen name="Drawer" component={MainDrawer} options={{ headerShown: false }} /> */}
     </Stack.Navigator>
   );
