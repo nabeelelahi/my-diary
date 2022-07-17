@@ -11,7 +11,7 @@ const personalInfo = yup.object({
         .required(),
     cellPhone: yup.number()
         .required(),
-    height: yup.number()
+    height: yup.string()
         .required(),
     weight: yup.number()
         .required(),
@@ -65,7 +65,7 @@ const physician = yup.object({
 })
 
 const diagnosis = yup.object({
-    illness: yup.number()
+    illness: yup.string()
         .required(),
     date: yup.string()
         .required(),
@@ -85,8 +85,8 @@ const vaccinations = yup.object({
         .required(),
     date: yup.string()
         .required(),
-    shots: yup.string()
-        .required(),
+    // shots: yup.string()
+    //     .required(),
 })
 
 const emergencyContact = yup.object({
@@ -131,15 +131,20 @@ const emergencyRoom = yup.object({
 })
 
 const homeCare = yup.object({
-    name: yup.string()
-        .required()
-        .min(3),
+    agencyName: yup.string()
+        .required(),
     address: yup.string()
         .required()
         .min(6),
     phone: yup.number()
         .required(),
     service: yup.string()
+        .required(),
+    assistantName: yup.string()
+        .required(),
+    noOfHours: yup.string()
+        .required(),
+    noOfWeeks: yup.string()
         .required(),
 })
 
@@ -167,7 +172,7 @@ const medications = yup.object({
         .required(),
 })
 
-const equipment = {
+const equipment = yup.object({
     walker: yup.string()
         .required(),
     care: yup.string()
@@ -198,70 +203,70 @@ const equipment = {
         .required(),
     others: yup.string()
         .required(),
-}
+})
 
-const laboratoryTest = {
+const laboratoryTest = yup.object({
     date: yup.string()
         .required(),
     time: yup.string()
         .required(),
     procedure: yup.string()
         .required(),
-}
+})
 
-const specialCareMedication = {
+const specialCareMedication = yup.object({
     date: yup.string()
         .required(),
     procedure: yup.string()
         .required(),
-}
+})
 
-const bloodPressure = {
+const bloodPressure = yup.object({
     date: yup.string()
         .required(),
     time: yup.string()
         .required(),
     bloodPressure: yup.string()
         .required(),
-}
+})
 
-const bloodSugar = {
+const bloodSugar = yup.object({
     date: yup.string()
         .required(),
     time: yup.string()
         .required(),
     bloodSugar: yup.string()
         .required(),
-}
+})
 
-const respiration = {
+const respiration = yup.object({
     date: yup.string()
         .required(),
     time: yup.string()
         .required(),
     respiration: yup.string()
         .required(),
-}
+})
 
-const heartRate = {
+const heartRate = yup.object({
     date: yup.string()
         .required(),
     time: yup.string()
         .required(),
     heartRate: yup.string()
         .required(),
-}
+})
 
-const tempreture = {
+const tempreture = yup.object({
     date: yup.string()
         .required(),
     time: yup.string()
         .required(),
     tempreture: yup.string()
         .required(),
-}
+})
 
-const inpatientFacility = {
+const inpatientFacility = yup.object({
     admissionDate: yup.string()
         .required(),
     dischargeDate: yup.string()
@@ -270,13 +275,12 @@ const inpatientFacility = {
         .required(),
     name: yup.string()
         .required(),
-    type: yup.string()
-        .required(),
+    type: yup.string(),
     advancedDirective: yup.string()
         .required(),
-    resuscitateOrderpe: yup.string()
+    resuscitateOrder: yup.string()
         .required(),
-}
+})
 
 const schemas = {
     personalInfo,

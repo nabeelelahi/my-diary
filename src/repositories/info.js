@@ -20,10 +20,7 @@ async function _create(payload, slug, actions, setIsLoading) {
         body: JSON.stringify(payload)
     };
 
-
     const response = await _httpRequest(url, options)
-
-    console.log(response)
 
     if (response?.success) {
         message.show()
@@ -32,6 +29,7 @@ async function _create(payload, slug, actions, setIsLoading) {
     }
     else {
         message.show('error', response.message)
+        setIsLoading(false)
     }
 
 }

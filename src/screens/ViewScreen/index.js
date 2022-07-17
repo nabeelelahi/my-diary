@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, ScrollView, Image, ActivityIndicator, Text } from 'react-native'
+import { View, ScrollView, Image, ActivityIndicator, Text, RefreshControl } from 'react-native'
 import Header from '~/components/shared/Header'
 import FloatingButton from '~/components/shared/Buttons/FloatingButton'
 import ListCard from '../../components/shared/Cards/ListCard'
@@ -7,7 +7,6 @@ import { _find } from '~/repositories/info';
 import {
     plus,
     noData,
-    noInternet
 } from '~/assets'
 import colors from '~/constants/colors'
 import { styles } from './viewScreen'
@@ -21,11 +20,12 @@ export default function ViewScreen({ navigation, route }) {
     const [state, setState] = useState([])
 
     const [renderState, setRenderState] = useState('loading')
+    const [refreshing, setRefreshing] = useState(false)
 
     useEffect(() => {
         setRenderState('loading')
         hanldeFetch()
-    }, [data.slug])
+    }, [data.slug, route, navigation])
 
     async function hanldeFetch() {
 
@@ -38,6 +38,24 @@ export default function ViewScreen({ navigation, route }) {
         }
         else {
             setRenderState('no_data')
+        }
+
+    }
+    
+    async function hanldeRefresh() {
+
+        setRefreshing(true)
+
+        const res = await _find(data.slug)
+
+        setState(res.data)
+
+        if (res.data?.length) {
+            setRefreshing(false)
+            setRenderState('render')
+        }
+        else {
+            setRefreshing(false)
         }
 
     }
@@ -73,7 +91,15 @@ export default function ViewScreen({ navigation, route }) {
     return (
         <>
             <Header title={data.title} navigation={navigation} />
-            <ScrollView>
+            <ScrollView
+                refreshControl={
+                    <RefreshControl
+                        colors={[colors.primary]}
+                        refreshing={refreshing}
+                        onRefresh={hanldeRefresh}
+                    />
+                }
+            >
                 <View style={styles.gridFlex}>
                     {renderData}
                 </View>

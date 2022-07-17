@@ -13,7 +13,8 @@ import {
     home,
     settings,
     faqs,
-    contact
+    contact,
+    logoutIcon
 } from '~/assets'
 import { styles } from './drawer'
 import logout from '~/helpers/logout'
@@ -48,7 +49,7 @@ export default function DrawerComp(props) {
                             <MenuCard source={contact} title={'Contact'} />
                             <MenuCard
                                 onPress={() => logout(navigation)}
-                                source={contact}
+                                source={logoutIcon}
                                 title={'Logout'}
                             />
                         </View>

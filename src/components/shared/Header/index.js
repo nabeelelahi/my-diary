@@ -18,7 +18,7 @@ export default function Header({ title, navigation }) {
             <View style={styles.rowFlex}>
                 <View style={styles.columnFlex}>
                     <TouchableOpacity  onPress={() => navigation.openDrawer()}>
-                        <Image source={drawerIcon} />
+                        <Image style={styles.hamburger} source={drawerIcon} />
                     </TouchableOpacity>
                     <Text style={styles.title}>{title}</Text>
                 </View>

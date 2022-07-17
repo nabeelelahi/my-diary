@@ -27,6 +27,7 @@ async function _signUp(values, navigation, setIsLoading) {
         navigation.navigate('Login')
     }
     else {
+        setIsLoading(false)
         message.show('error', response.message)
     }
 

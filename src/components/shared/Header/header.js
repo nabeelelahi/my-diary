@@ -4,7 +4,7 @@ import metrices from "~/constants/metrices";
 
 export const styles = StyleSheet.create({
     header: {
-        height: metrices.HEIGHT(0.175),
+        height: metrices.HEIGHT(0.17),
         width: metrices.WIDTH(),
     },
     rowFlex: {
@@ -23,4 +23,8 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20
     },
+    hamburger:{
+        height: metrices.HEIGHT(0.05),
+        width: metrices.HEIGHT(0.05)
+    }
 })

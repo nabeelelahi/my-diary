@@ -47,7 +47,7 @@ export default function BaseInput({ item, data }) {
         setIsVisible(false)
     }
 
-    function valueChange(value){
+    function valueChange(value) {
         props.values[item.name] = value
         setValue(value)
     }
@@ -79,11 +79,12 @@ export default function BaseInput({ item, data }) {
                             selectedValue={value}
                             value={value}
                             onValueChange={valueChange}
+                            color={'#fff'}
                         >
                             {
                                 options[item?.slug]?.map((option) => (
                                     <Select.Item
-                                        key={option.value}
+                                        key={String(option.value)}
                                         label={option.name}
                                         value={option.value}
                                     />

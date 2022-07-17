@@ -16,13 +16,12 @@ import GradientContainer from '~/components/shared/GradientContainer';
 import Button from '~/components/shared/Buttons/Button';
 import { Formik } from 'formik';
 import schemas from '~/config/Data/validations'
-import initialValues from '~/config/Data/validations'
+import initialValues from '~/config/Data/initialsValues'
 import formFields from '~/config/Data/formFields';
 import { arrow, logo } from '~/assets'
 import { _create } from '~/repositories/info';
 import BaseInput from '~/components/shared/Inputs/BaseInput';
 import Avatar from '~/components/shared/Avatar';
-
 import * as yup from 'yup'
 
 export default function FormScreen({ navigation, route }) {
@@ -30,6 +29,8 @@ export default function FormScreen({ navigation, route }) {
     const { params } = route;
 
     const [isLoading, setIsLoading] = useState(false)
+
+    // setIsLoading(false)
 
     return (
         <KeyboardAvoidingView style={styles.avoidView}>

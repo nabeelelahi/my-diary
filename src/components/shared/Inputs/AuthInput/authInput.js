@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     },
     icon: {
         height: metrices.HEIGHT(0.03),
-        width: '7%',
+        width: metrices.HEIGHT(0.03),
     },
     input: {
         width: '90%',

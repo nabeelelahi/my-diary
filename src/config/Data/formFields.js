@@ -106,6 +106,7 @@ const equipment = [
     { name: 'crutches', label: 'Crutches', key: '6', type: 'select', slug: 'equipment' },
     { name: 'brace', label: 'Brace', key: '7', type: 'select', slug: 'equipment' },
     { name: 'oxygen', label: 'Oxygen', key: '8', type: 'select', slug: 'equipment' },
+    { name: 'ventilator', label: 'Ventilator', key: '15', type: 'select', slug: 'equipment' },
     { name: 'bipap', label: 'Bi pap', key: '9', type: 'select', slug: 'equipment' },
     { name: 'cpap', label: 'C pap', key: '0', type: 'select', slug: 'equipment' },
     { name: 'nebulizer', label: 'Nebulizer', key: '10', type: 'select', slug: 'equipment' },

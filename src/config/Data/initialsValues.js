@@ -77,10 +77,13 @@ const emergencyRoom = {
 }
 
 const homeCare = {
-    name: '',
+    agencyName: '',
     address: '',
     phone: '',
     service: '',
+    assistantName: '',
+    noOfHours: '',
+    noOfWeeks: '',
 }
 
 const medicalTest = {
@@ -164,7 +167,7 @@ const inpatientFacility = {
     name: '',
     type: '',
     advancedDirective: '',
-    resuscitateOrderpe: '',
+    resuscitateOrder: '',
 }
 
 const initialValues = {

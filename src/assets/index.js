@@ -35,6 +35,7 @@ import home from './images/Home.png'
 import inpatientFacility from './images/Inpatient.png'
 import noData from './images/No-Data.png'
 import noInternet from './images/No-Internet.png'
+import logoutIcon from './images/logout.png'
 
 export {
     logo,
@@ -73,5 +74,6 @@ export {
     home,
     inpatientFacility,
     noData,
-    noInternet
+    noInternet,
+    logoutIcon
 }

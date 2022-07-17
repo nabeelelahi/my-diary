@@ -10,7 +10,7 @@ import {
 
 const specialCare = [
     { title: 'Vitals', icon: vitalsIcon, slug: 'vitals' },
-    { title: 'Laboratory Test', icon: laboratoryTest, slug: 'laboratoryTest' },
+    // { title: 'Laboratory Test', icon: laboratoryTest, slug: 'laboratoryTest' },
     // { title: 'Medication', icon: medications, slug: 'specialCareMedication' },
 ]
 
