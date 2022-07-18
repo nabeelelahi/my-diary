@@ -61,6 +61,13 @@ const globalStyles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  termsText:{
+    fontSize: 15,
+    textAlign: 'center',
+    margin: '5%',
+    lineHeight: 24,
+    color: colors.baseBlack
   }
 });
 

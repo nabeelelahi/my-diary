@@ -4,6 +4,8 @@ import Dahboard from '~/screens/Dashboard';
 import FormScreen from '~/screens/FormScreen';
 import SubTabs from '~/screens/SubTabs';
 import ViewScreen from '~/screens/ViewScreen';
+import PrivacyPolicy from '~/screens/PrivacyPolicy';
+import TermsAndConditions from '~/screens/TermsAndConditions';
 import DrawerComp from '~/components/shared/Drawer'
 
 const Drawer = createDrawerNavigator();
@@ -30,6 +32,16 @@ export default function DrawerNavigation() {
         name="ViewScreen"
         options={{ headerShown: false }}
         component={ViewScreen}
+      />
+      <Drawer.Screen
+        name="TermsAndConditions"
+        options={{ headerShown: false }}
+        component={TermsAndConditions}
+      />
+      <Drawer.Screen
+        name="PrivacyPolicy"
+        options={{ headerShown: false }}
+        component={PrivacyPolicy}
       />
     </Drawer.Navigator>
   );

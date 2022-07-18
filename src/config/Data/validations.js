@@ -275,7 +275,8 @@ const inpatientFacility = yup.object({
         .required(),
     name: yup.string()
         .required(),
-    type: yup.string(),
+    type: yup.string()
+        .required(),
     advancedDirective: yup.string()
         .required(),
     resuscitateOrder: yup.string()

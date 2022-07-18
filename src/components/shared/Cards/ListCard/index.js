@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text } from 'react-native'
 import formFields from '~/config/Data/formFields'
 import metrices from '~/constants/metrices'
 import globalStyles from '~/assets/styles/globalStyles'
@@ -34,10 +34,10 @@ export default function ListCard({ data, item, customStyles }) {
 
 
     return (
-        <TouchableOpacity activeOpacity={0.7} onPress={() => { }} style={dynamicStyle}>
+        <View activeOpacity={0.7} style={dynamicStyle}>
             {
                 data && renderData
             }
-        </TouchableOpacity>
+        </View>
     )
 }

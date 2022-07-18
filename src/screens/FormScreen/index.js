@@ -52,7 +52,7 @@ export default function FormScreen({ navigation, route }) {
                         <Formik
                             validationSchema={schemas[params.slug] || yup.object({})}
                             initialValues={initialValues[params.slug] || {}}
-                            onSubmit={(values, actions) => _create(values, params.slug, actions, setIsLoading)}
+                            onSubmit={(values, actions) => _create(values, params.slug, actions, setIsLoading, navigation, params)}
                         >
                             {(props) => {
                                 return (

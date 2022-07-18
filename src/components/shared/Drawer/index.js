@@ -14,7 +14,9 @@ import {
     settings,
     faqs,
     contact,
-    logoutIcon
+    logoutIcon,
+    privacy,
+    terms
 } from '~/assets'
 import { styles } from './drawer'
 import logout from '~/helpers/logout'
@@ -43,10 +45,19 @@ export default function DrawerComp(props) {
                                 onPress={() => navigation.navigate('Dahboard')}
                                 source={home}
                                 title={'Home'}
+                                />
+                            {/* <MenuCard source={settings} title={'Settings'} /> */}
+                            <MenuCard
+                                onPress={() => navigation.navigate('PrivacyPolicy')}
+                                source={privacy}
+                                title={"Privacy Policy"}
                             />
-                            <MenuCard source={settings} title={'Settings'} />
-                            <MenuCard source={faqs} title={"FAQ's"} />
-                            <MenuCard source={contact} title={'Contact'} />
+                            <MenuCard
+                                onPress={() => navigation.navigate('TermsAndConditions')}
+                                source={terms}
+                                title={"Terms and Conditions"}
+                            />
+                            {/* <MenuCard source={contact} title={'Contact'} /> */}
                             <MenuCard
                                 onPress={() => logout(navigation)}
                                 source={logoutIcon}

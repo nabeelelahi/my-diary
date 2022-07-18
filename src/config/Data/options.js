@@ -113,13 +113,13 @@ const homeCare_noOfHours = [
 ]
 
 const inpatientFacility_type = [
-    { name: 'Hospital', values: 'hospital' },
-    { name: 'Hospice', values: 'hospice' },
-    { name: 'LTAC', values: 'LTAC' },
-    { name: 'SNF', values: 'SNF' },
-    { name: 'Rehabilitation', values: 'rehabilitation' },
-    { name: 'Behavioral / Mental', values: 'mental' },
-    { name: "Nursing Home", values: 'nursing-home' }
+    { name: 'Hospital', value: 'hospital' },
+    { name: 'Hospice', value: 'hospice' },
+    { name: 'LTAC', value: 'LTAC' },
+    { name: 'SNF', value: 'SNF' },
+    { name: 'Rehabilitation', value: 'rehabilitation' },
+    { name: 'Behavioral / Mental', value: 'mental' },
+    { name: "Nursing Home", value: 'nursing-home' }
 
 ]
 

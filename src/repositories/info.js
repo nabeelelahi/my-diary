@@ -2,7 +2,7 @@ import _httpRequest from './repository'
 import message from '~/helpers/message'
 import storage from '~/helpers/storage'
 
-async function _create(payload, slug, actions, setIsLoading) {
+async function _create(payload, slug, actions, setIsLoading, navigation, params) {
 
     setIsLoading(true)
 
@@ -22,13 +22,16 @@ async function _create(payload, slug, actions, setIsLoading) {
 
     const response = await _httpRequest(url, options)
 
+    console.log(response)
+
     if (response?.success) {
         message.show()
         actions.resetForm()
         setIsLoading(false)
+        navigation.navigate('ViewScreen', params)
     }
     else {
-        message.show('error', response.message)
+        message.show('error', 'Network error')
         setIsLoading(false)
     }
 

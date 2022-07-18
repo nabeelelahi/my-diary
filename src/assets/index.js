@@ -36,6 +36,8 @@ import inpatientFacility from './images/Inpatient.png'
 import noData from './images/No-Data.png'
 import noInternet from './images/No-Internet.png'
 import logoutIcon from './images/logout.png'
+import privacy from './images/privacy.png'
+import terms from './images/terms.png'
 
 export {
     logo,
@@ -75,5 +77,7 @@ export {
     inpatientFacility,
     noData,
     noInternet,
-    logoutIcon
+    logoutIcon,
+    privacy,
+    terms
 }
