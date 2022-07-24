@@ -104,10 +104,10 @@ export default function ViewScreen({ navigation, route }) {
                     {renderData}
                 </View>
             </ScrollView>
-            <FloatingButton
+            {/* <FloatingButton
                 onPress={() => navigation.navigate('FormScreen', data)}
                 icon={plus}
-            />
+            /> */}
         </>
     )
 }

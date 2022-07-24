@@ -40,8 +40,8 @@ export default function Login({ navigation }) {
     const [isLoading, setIsLoading] = useState(false)
 
     const inputs = [
-        { name: 'email', placeHolder: 'Email...', source: arroba, key: '1' },
-        { name: 'password', placeHolder: 'Password...', source: password, key: '3' }
+        { name: 'email', placeHolder: 'Email...', source: arroba, key: '1', secureTextEntry: false },
+        { name: 'password', placeHolder: 'Password...', source: password, key: '3', secureTextEntry: true }
     ]
 
     return (

@@ -12,13 +12,13 @@ export default function OurVision({ navigation }) {
     <GradientContainer topContainer={true}>
       <DescriptionCard title={'Our Vision'}>
 
-        As a consumer of health care services, it is important to know what services are being provided to you to prevent health care errors. Healthcare services can be overwhelming and contribute to forgetting or misplacing valuable information pertaining to the various medical test, treatments, laboratory results, procedures, medications prescribed, appointments with medical personnel or other aspects of your health care.
-        As a patient or the individual responsible for the health of a loved one, keeping a record of your health care or your loved one’s health care is very important. Having your health care in your hands readily available to share with any practitioner you see. Having your health care record in a single location, and the ability to have access to your health care information when your physician’s office is closed, and most importantly being knowledgeable about your health care
-        “My Medical Diary “ is an App designed to track your health care.  Each section is designed to document the various health care services you encounter as a patient. Your health or the health of your love one can not be replaced. Allow “My Medical Diary” assist you in becoming a knowledgeable participant of your health care team. Begin with tracking the services you receive as a consumer of health care with “My Medical Diary”.
+        It is the vision of “My Medical Diary” for consumers of healthcare to readily access their healthcare information from the palm of their hand to assist with improved outcomes and self-management of their care.
+        As a consumer of healthcare services, it is important to know what services or treatments are being provided to you. Healthcare services can be overwhelming and contribute to forgetting or misplacing valuable information related to the various medical test, treatments, laboratory results, medications, vaccinations, medical appointments, or other aspects of your or loved one’s healthcare. As a patient or the individual responsible for the healthcare of a loved one having access readily available in your hands is very important. Having this healthcare information to share with any practitioner you may see. Having a history of your healthcare information in a single location, the palm of your hand. Having information about your healthcare when your physician’s office is closed, and most importantly is being a knowledgeable consumer about your healthcare.
+        “My Medical Diary” is an App designed to track your healthcare. The icons were created to assist you to document the various healthcare services encountered as a consumer of healthcare. Having healthcare information readily available can be helpful and important. Allow “My Medical Diary” assist you with tracking your healthcare services.
 
 
       </DescriptionCard>
-      <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <Button
           title="Next"
           style={{ ...globalStyles.baseButton, ...styles.button }}

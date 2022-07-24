@@ -1,11 +1,11 @@
 const personalInfo = [
     { name: 'name', label: 'Name', key: '1', type: 'input' },
     { name: 'address', label: 'Address', key: '2', type: 'input' },
-    { name: 'phone', label: 'Phone', key: '3', type: 'input' },
-    { name: 'cellPhone', label: 'Cell Phone', key: '4', type: 'input' },
-    { name: 'height', label: 'Height', key: '5', type: 'input' },
-    { name: 'weight', label: 'Weight', key: '6', type: 'input' },
-    { name: 'age', label: 'Age', key: '7', type: 'input' },
+    { name: 'phone', label: 'Phone', key: '3', type: 'input', keyboardType: 'numeric' },
+    { name: 'cellPhone', label: 'Cell Phone', key: '4', type: 'input', keyboardType: 'numeric' },
+    { name: 'height', label: 'Height', key: '5', type: 'input', keyboardType: 'numeric' },
+    { name: 'weight', label: 'Weight', key: '6', type: 'input', keyboardType: 'numeric' },
+    { name: 'age', label: 'Age', key: '7', type: 'input', keyboardType: 'numeric' },
     { name: 'sex', label: 'Sex', key: '8', type: 'select', slug: 'personalInfo_sex' },
     { name: 'allergies', label: 'Allergies', key: '0', type: 'input' },
 ]
@@ -13,7 +13,7 @@ const personalInfo = [
 const insurance = [
     { name: 'medicare', label: 'Medicare #', key: '1', type: 'input' },
     { name: 'medicaid', label: 'Medicaid #', key: '2', type: 'input' },
-    { name: 'privateInsurane', label: 'Private Insurane', key: '3', type: 'input' },
+    { name: 'privateInsurane', label: 'Private Insurance', key: '3', type: 'input' },
     { name: 'policy', label: 'Policy #', key: '4', type: 'input' },
     { name: 'group', label: 'Group #', key: '5', type: 'input' },
     { name: 'otherPayerSource', label: 'Other Payer Source', key: '6', type: 'input' },
@@ -26,17 +26,17 @@ const physician = [
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'city', label: 'City', key: '3', type: 'input' },
     { name: 'state', label: 'State', key: '4', type: 'input' },
-    { name: 'phone', label: 'TelePhone #', key: '5', type: 'input' },
+    { name: 'phone', label: 'Telephone #', key: '5', type: 'input' },
     { name: 'typeOfPhysician', label: 'Type Of Physician', key: '6', type: 'input' },
 ]
 
 const diagnosis = [
     { name: 'illness', label: 'Medical Problem/Illness', key: '1', type: 'input' },
-    { name: 'date', label: 'Date Of Diagnosis/Illness', key: '2', type: 'date' },
+    { name: 'date', label: 'Date Of Problem/Illness', key: '2', type: 'date' },
 ]
 
 const surgeries = [
-    { name: 'procedure', label: 'Surgical Opration / Procedure', key: '1', type: 'input' },
+    { name: 'procedure', label: 'Surgical Operation / Procedure', key: '1', type: 'input' },
     { name: 'date', label: 'Date', key: '2', type: 'date' },
     { name: 'hospital', label: 'Hospital', key: '3', type: 'input' },
 ]
@@ -52,7 +52,7 @@ const emergencyContact = [
     { name: 'name', label: 'Name', key: '1', type: 'input' },
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
-    { name: 'relation', label: 'Relation Ship', key: '4', type: 'select', slug: 'emergencyContact_relation' },
+    { name: 'relation', label: 'Relationship', key: '4', type: 'select', slug: 'emergencyContact_relation' },
 ]
 
 const doctorVisits = [
@@ -68,7 +68,7 @@ const emergencyRoom = [
     { name: 'date', label: 'Date', key: '1', type: 'date' },
     { name: 'facilityName', label: 'Facility Name', key: '2', type: 'input' },
     { name: 'physcianName', label: 'Physican Name', key: '3', type: 'input' },
-    { name: 'reason', label: 'Reason For Emergency', key: '5', type: 'input' },
+    { name: 'reason', label: 'Reason for Emergency Visit', key: '5', type: 'input' },
     { name: 'hospitalAdmission', label: 'Hospital Admission', key: '6', type: 'select', slug: 'emergencyRoom_hospitalAdmission' },
 ]
 
@@ -76,10 +76,10 @@ const homeCare = [
     { name: 'agencyName', label: 'Name of Agency', key: '1', type: 'input' },
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'phone', label: 'Phone', key: '3', type: 'input' },
-    { name: 'service', label: 'Service', key: '4', type: 'select', slug: 'homeCare_service' },
-    { name: 'assistantName', label: 'Name of Assistant', key: '4', type: 'input' },
-    { name: 'noOfHours', label: 'No. of hours', key: '3', type: 'select', slug: 'homeCare_noOfHours' },
-    { name: 'noOfWeeks', label: 'No. of weeks', key: '3', type: 'input' },
+    { name: 'service', label: 'Services', key: '4', type: 'select', slug: 'homeCare_service' },
+    { name: 'assistantName', label: 'Name of Assistance Services', key: '4', type: 'input' },
+    { name: 'noOfHours', label: 'Number of hours', key: '3', type: 'select', slug: 'homeCare_noOfHours' },
+    { name: 'noOfWeeks', label: 'Number of weeks', key: '3', type: 'input' },
 ]
 
 const medicalTest = [
@@ -89,7 +89,7 @@ const medicalTest = [
 ]
 
 const medications = [
-    { name: 'name', label: 'Medication Name', key: '1', type: 'input' },
+    { name: 'name', label: 'Medication Name', key: '1', type: 'select', slug: 'medications_name' },
     { name: 'dose', label: 'Dose', key: '2', type: 'input' },
     { name: 'frequency', label: 'Frequency', key: '3', type: 'input' },
     { name: 'startDate', label: 'Start Date', key: '4', type: 'date' },
@@ -99,9 +99,9 @@ const medications = [
 
 const equipment = [
     { name: 'walker', label: 'Walker', key: '1', type: 'select', slug: 'equipment' },
-    { name: 'care', label: 'Care', key: '2', type: 'select', slug: 'equipment' },
-    { name: 'wheelChair', label: 'Wheel Chair', key: '3', type: 'select', slug: 'equipment' },
-    { name: 'prosthetics', label: 'Prosthetics', key: '4', type: 'select', slug: 'equipment' },
+    { name: 'care', label: 'Cane', key: '2', type: 'select', slug: 'equipment' },
+    { name: 'wheelChair', label: 'WheelChair', key: '3', type: 'select', slug: 'equipment' },
+    { name: 'prosthetics', label: 'Prosthetic', key: '4', type: 'select', slug: 'equipment' },
     { name: 'hospitalBed', label: 'Hospital Bed', key: '5', type: 'select', slug: 'equipment' },
     { name: 'crutches', label: 'Crutches', key: '6', type: 'select', slug: 'equipment' },
     { name: 'brace', label: 'Brace', key: '7', type: 'select', slug: 'equipment' },
@@ -157,17 +157,17 @@ const heartRate = [
 const tempreture = [
     { name: 'date', label: 'Date', key: '1', type: 'date' },
     { name: 'time', label: 'Time', key: '1', type: 'time' },
-    { name: 'tempreture', label: 'Tempreture', key: '1', type: 'input' },
+    { name: 'tempreture', label: 'Temperature', key: '1', type: 'input' },
 ]
 
 const inpatientFacility = [
     { name: 'admissionDate', label: 'Date Admitted', key: '1', type: 'date' },
-    { name: 'dischargeDate', label: 'Date Discharge', key: '2', type: 'date' },
+    { name: 'dischargeDate', label: 'Date Discharged', key: '2', type: 'date' },
     { name: 'reason', label: 'Reason for Admission', key: '3', type: 'input' },
     { name: 'name', label: 'Name of Inpatient facility', key: '4', type: 'input' },
     { name: 'type', label: 'Type of inpatient facility', key: '5', type: 'select', slug: 'inpatientFacility_type' },
     { name: 'advancedDirective', label: 'I have prepared an Advanced Directive for Healthcare', key: '6', type: 'select', slug: 'equipment' },
-    { name: 'resuscitateOrder', label: 'I have a Do No Resuscitate Order', key: '7', type: 'select', slug: 'equipment' },
+    { name: 'resuscitateOrder', label: 'I have a Do Not Resuscitate Order', key: '7', type: 'select', slug: 'equipment' },
 ]
 
 const formFields = {

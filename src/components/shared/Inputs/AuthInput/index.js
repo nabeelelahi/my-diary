@@ -30,6 +30,7 @@ export default function AuthInput({ item, data }) {
                     <TextInput
                         style={boxStyles}
                         placeholder={item.placeHolder}
+                        secureTextEntry={item.secureTextEntry}
                         placeholderTextColor={colors.secondary}
                         value={props?.values[item.name]}
                         onChangeText={props?.handleChange(item.name)}

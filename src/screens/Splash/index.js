@@ -45,7 +45,7 @@ export default function Splash({ navigation }) {
       navigation.navigate('Home')
     }
     else {
-      navigation.navigate('Disclaimer')
+      navigation.navigate('TermsAndConditions')
     }
   }
 

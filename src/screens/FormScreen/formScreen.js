@@ -14,7 +14,14 @@ export const styles = StyleSheet.create({
         height: metrices.HEIGHT(0.05),
         width: metrices.WIDTH(0.8),
         marginHorizontal: '5%',
-        marginVertical: '10%',
+        alignSelf: 'center',
+        borderRadius: 75
+    },
+    viewButton: {
+        height: metrices.HEIGHT(0.05),
+        width: metrices.WIDTH(0.8),
+        marginHorizontal: '5%',
+        marginVertical: '5%',
         alignSelf: 'center',
         borderRadius: 75
     },

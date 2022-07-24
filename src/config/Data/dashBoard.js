@@ -30,8 +30,8 @@ export const dashBoardOptions = [
     { title: 'Medical Equipment', icon: equipment, slug: 'equipment' },
     { title: 'Inpatient Facility', icon: inpatientFacility, slug: 'inpatientFacility' },
     { title: 'Special Care', icon: specialCare, slug: 'specialCare' },
-    { title: 'Emergency Room', icon: emergencyRoom, slug: 'emergencyRoom' },
-    { title: 'Doctor Visits', icon: doctorVisits, slug: 'doctorVisits' },
+    { title: 'Emergency Room Visit', icon: emergencyRoom, slug: 'emergencyRoom' },
+    { title: 'Doctor Visit', icon: doctorVisits, slug: 'doctorVisits' },
     { title: 'Home Care', icon: homeCare, slug: 'homeCare' },
     { title: 'Emergency Contacts', icon: emergencyContact, slug: 'emergencyContact' },
 ]

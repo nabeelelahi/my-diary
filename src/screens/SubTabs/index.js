@@ -12,7 +12,7 @@ export default function SubTabs({ navigation, route }) {
 
   function redirect(item) {
     if (item.slug === 'vitals') navigation.navigate('SubTabs', item)
-    else navigation.navigate('ViewScreen', item)  
+    else navigation.navigate('FormScreen', item)  
   }
 
   return (

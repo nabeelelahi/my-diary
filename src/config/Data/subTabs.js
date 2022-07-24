@@ -9,8 +9,8 @@ import {
 } from '~/assets'
 
 const specialCare = [
-    { title: 'Vitals', icon: vitalsIcon, slug: 'vitals' },
-    // { title: 'Laboratory Test', icon: laboratoryTest, slug: 'laboratoryTest' },
+    { title: 'Vital Signs', icon: vitalsIcon, slug: 'vitals' },
+    { title: 'Laboratory Test', icon: laboratoryTest, slug: 'laboratoryTest' },
     // { title: 'Medication', icon: medications, slug: 'specialCareMedication' },
 ]
 
@@ -19,7 +19,7 @@ const vitals = [
     { title: 'Blood Sugar', icon: blooadSugar, slug: 'bloodSugar' },
     { title: 'Respirations', icon: respiration, slug: 'respiration' },
     { title: 'Heart Rate', icon: heartRate, slug: 'heartRate' },
-    { title: 'Tempreture', icon: tempreture, slug: 'tempreture' },
+    { title: 'Temperature', icon: tempreture, slug: 'tempreture' },
 ]
 
 const subTabs = {

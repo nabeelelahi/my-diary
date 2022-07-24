@@ -9,7 +9,7 @@ export default function Dashboard({ navigation }) {
 
   function redirect(item) {
     if (item.slug === 'specialCare') navigation.navigate('SubTabs', item) 
-    else navigation.navigate('ViewScreen', item)
+    else navigation.navigate('FormScreen', item)
   }
 
   return (

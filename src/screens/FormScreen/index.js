@@ -79,6 +79,13 @@ export default function FormScreen({ navigation, route }) {
                             }
                             }
                         </Formik>
+                        <TouchableOpacity onPress={() => navigation.navigate('ViewScreen', params)}>
+                            <Button
+                                title="View"
+                                style={{ ...globalStyles.baseButton, ...styles.viewButton }}
+                                textStyle={{ ...globalStyles.baseButtonText, ...styles.buttonText }}
+                            />
+                        </TouchableOpacity>
                     </GradientContainer>
                 </TouchableWithoutFeedback>
             </ScrollView>

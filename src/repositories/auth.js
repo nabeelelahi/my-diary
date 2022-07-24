@@ -56,7 +56,7 @@ async function _login(values, navigation, setIsLoading) {
         await storage.set('user', response.data)
         setIsLoading(false)
         message.show('success', response.message)
-        navigation.navigate('Home')
+        navigation.navigate('OurVision')
     }
     else {
         setIsLoading(false)

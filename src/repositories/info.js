@@ -22,8 +22,6 @@ async function _create(payload, slug, actions, setIsLoading, navigation, params)
 
     const response = await _httpRequest(url, options)
 
-    console.log(response)
-
     if (response?.success) {
         message.show()
         actions.resetForm()

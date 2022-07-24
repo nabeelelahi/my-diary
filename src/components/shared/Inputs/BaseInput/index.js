@@ -61,6 +61,7 @@ export default function BaseInput({ item, data }) {
                     <TextInput
                         style={boxStyles}
                         placeholder={item.placeHolder}
+                        keyboardType={item?.keyboardType || 'default'}
                         // placeholderTextColor={colors.secondary}
                         value={props?.values[item.name]}
                         onChangeText={props?.handleChange(item.name)}
@@ -86,7 +87,7 @@ export default function BaseInput({ item, data }) {
                                     <Select.Item
                                         key={String(option.value)}
                                         label={option.name}
-                                        value={option.value}
+                                        value={option.value || option.name}
                                     />
                                 ))
                             }
