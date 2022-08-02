@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
         color: colors.baseWhite,
         fontSize: 14,
         paddingHorizontal: 10,
+        backgroundColor: 'black'
     },
     boxWhite: {
         borderColor: colors.baseWhite,

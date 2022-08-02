@@ -3,7 +3,7 @@ const personalInfo = [
     { name: 'address', label: 'Address', key: '2', type: 'input' },
     { name: 'phone', label: 'Phone', key: '3', type: 'input', keyboardType: 'numeric' },
     { name: 'cellPhone', label: 'Cell Phone', key: '4', type: 'input', keyboardType: 'numeric' },
-    { name: 'height', label: 'Height', key: '5', type: 'input', keyboardType: 'numeric' },
+    { name: 'height', label: 'Height', key: '5', type: 'input' },
     { name: 'weight', label: 'Weight', key: '6', type: 'input', keyboardType: 'numeric' },
     { name: 'age', label: 'Age', key: '7', type: 'input', keyboardType: 'numeric' },
     { name: 'sex', label: 'Sex', key: '8', type: 'select', slug: 'personalInfo_sex' },
@@ -60,7 +60,7 @@ const doctorVisits = [
     // { name: 'time', label: 'Time', key: '2', type: 'time' },
     { name: 'physcianName', label: 'Doctor Name', key: '3', type: 'input' },
     // { name: 'physcianType', label: 'Type of Physican', key: '4', type: 'input' },
-    { name: 'reason', label: 'Reason For Appointment', key: '5', type: 'input' },
+    { name: 'reason', label: 'Reason For Appointment', key: '5', type: 'select', slug: 'medications_reason' },
     { name: 'nextAppointment', label: 'Next Appointment', key: '6', type: 'date' },
 ]
 
@@ -68,7 +68,7 @@ const emergencyRoom = [
     { name: 'date', label: 'Date', key: '1', type: 'date' },
     { name: 'facilityName', label: 'Facility Name', key: '2', type: 'input' },
     { name: 'physcianName', label: 'Physican Name', key: '3', type: 'input' },
-    { name: 'reason', label: 'Reason for Emergency Visit', key: '5', type: 'input' },
+    { name: 'reason', label: 'Reason for Emergency Visit', key: '5', type: 'select', slug: 'medications_reason' },
     { name: 'hospitalAdmission', label: 'Hospital Admission', key: '6', type: 'select', slug: 'emergencyRoom_hospitalAdmission' },
 ]
 
@@ -122,7 +122,7 @@ const blood = [
 const laboratoryTest = [
     { name: 'date', label: 'Date', key: '2', type: 'date' },
     { name: 'time', label: 'Time', key: '3', type: 'time' },
-    { name: 'procedure', label: 'Laboratory Test', key: '1', type: 'select', slug: 'medicalTest_procedure' },
+    { name: 'procedure', label: 'Laboratory Test', key: '1', type: 'select', slug: 'laboratoryTest_procedure' },
 ]
 
 const specialCareMedication = [

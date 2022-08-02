@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, TouchableOpacityBase } from 'react-native';
 import { FormControl, Select } from "native-base";
 import DateTimePickerModal from 'react-native-modal-datetime-picker'
+import Autocomplete from 'react-native-autocomplete-input';
 import moment from 'moment'
 import options from '~/config/Data/options';
 import { styles } from "./baseInputs";
@@ -14,11 +15,13 @@ export default function BaseInput({ item, data }) {
     const [time, setTime] = useState('')
     const [value, setValue] = useState('')
     const [boxStyles, setBoxStyles] = useState({ ...styles.box, ...styles.boxWhite })
+    const [queriedData, setQueriedData] = useState([])
 
     useEffect(() => {
         setDate('')
         setTime('')
         setIsVisible(false)
+        setQueriedData([])
     }, [item])
 
     useEffect(() => {
@@ -50,6 +53,25 @@ export default function BaseInput({ item, data }) {
     function valueChange(value) {
         props.values[item.name] = value
         setValue(value)
+    }
+
+    function queryData(value) {
+        setValue(value)
+        if (value === '') {
+            setQueriedData([])
+        }
+        else {
+            const searchResult = options[item?.slug]?.filter(item => {
+                return item.name?.toLowerCase()?.includes(value?.toLowerCase())
+            })
+            setQueriedData(searchResult)
+        }
+    }
+
+    function onAutoCompleteChange(value) {
+        props.values[item.name] = value
+        setValue(value)
+        setQueriedData([])
     }
 
 
@@ -93,6 +115,31 @@ export default function BaseInput({ item, data }) {
                             }
                         </Select>
                     </FormControl>
+                    <Text style={styles.errtxt}>{props?.touched[item.name] && props?.errors[item.name]}</Text>
+                </View>
+            )
+        }
+        else if (item.type === 'autocomplete') {
+            return (
+                <View>
+                    <Text style={styles.label}>{item.label}:</Text>
+                    <Autocomplete
+                        inputContainerStyle={{
+                            // color:'black',
+                            width: 300
+                        }}
+                        data={queriedData}
+                        value={value}
+                        onChangeText={(text) => queryData(text)}
+                        flatListProps={{
+                            keyExtractor: (_, idx) => _.name + `${Math.random() * 1000}`,
+                            renderItem: ({ item }) => (
+                                <TouchableOpacity onPress={() => onAutoCompleteChange(item?.name)}>
+                                    <Text>{item?.name}</Text>
+                                </TouchableOpacity>
+                            ),
+                        }}
+                    />
                     <Text style={styles.errtxt}>{props?.touched[item.name] && props?.errors[item.name]}</Text>
                 </View>
             )
