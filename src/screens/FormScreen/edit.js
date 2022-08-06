@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import {
     View,
     Image,
@@ -16,21 +17,18 @@ import GradientContainer from '~/components/shared/GradientContainer';
 import Button from '~/components/shared/Buttons/Button';
 import { Formik } from 'formik';
 import schemas from '~/config/Data/validations'
-import initialValues from '~/config/Data/initialsValues'
 import formFields from '~/config/Data/formFields';
 import { arrow, logo } from '~/assets'
-import { _create } from '~/repositories/info';
+import { _update } from '~/repositories/info';
 import BaseInput from '~/components/shared/Inputs/BaseInput';
 import Avatar from '~/components/shared/Avatar';
 import * as yup from 'yup'
 
-export default function FormScreen({ navigation, route }) {
+export default function EditFormScreen({ navigation, route }) {
 
     const { params } = route;
 
     const [isLoading, setIsLoading] = useState(false)
-
-    // setIsLoading(false)
 
     return (
         <KeyboardAvoidingView style={styles.avoidView}>
@@ -51,8 +49,8 @@ export default function FormScreen({ navigation, route }) {
                         </View>
                         <Formik
                             validationSchema={schemas[params.slug] || yup.object({})}
-                            initialValues={params.values || initialValues[params.slug] || {}}
-                            onSubmit={(values, actions) => _create(values, params.slug, actions, setIsLoading, navigation, params)}
+                            initialValues={params.values || {}}
+                            onSubmit={(values, actions) => _update(params.values._id, values, params.slug, actions, setIsLoading)}
                         >
                             {(props) => {
                                 return (
@@ -79,13 +77,6 @@ export default function FormScreen({ navigation, route }) {
                             }
                             }
                         </Formik>
-                        <TouchableOpacity onPress={() => navigation.navigate('ViewScreen', params)}>
-                            <Button
-                                title="View"
-                                style={{ ...globalStyles.baseButton, ...styles.viewButton }}
-                                textStyle={{ ...globalStyles.baseButtonText, ...styles.buttonText }}
-                            />
-                        </TouchableOpacity>
                     </GradientContainer>
                 </TouchableWithoutFeedback>
             </ScrollView>

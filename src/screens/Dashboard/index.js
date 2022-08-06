@@ -23,6 +23,7 @@ export default function Dashboard({ navigation }) {
                 key={item.slug}
                 item={item}
                 index={index + 1}
+                length={dashBoardOptions.length}
                 onPress={() => redirect(item)}
               />
             ))

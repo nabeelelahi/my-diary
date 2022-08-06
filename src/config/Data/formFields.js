@@ -27,7 +27,7 @@ const physician = [
     { name: 'city', label: 'City', key: '3', type: 'input' },
     { name: 'state', label: 'State', key: '4', type: 'input' },
     { name: 'phone', label: 'Telephone #', key: '5', type: 'input' },
-    { name: 'typeOfPhysician', label: 'Type Of Physician', key: '6', type: 'input' },
+    { name: 'typeOfPhysician', label: 'Type Of Physician', key: '6', type: 'select', slug: 'medications_reason' },
 ]
 
 const diagnosis = [

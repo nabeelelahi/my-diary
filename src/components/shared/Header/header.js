@@ -24,7 +24,11 @@ export const styles = StyleSheet.create({
         fontSize: 20
     },
     hamburger:{
-        height: metrices.HEIGHT(0.05),
-        width: metrices.HEIGHT(0.05)
+        height: 35,
+        width: 35
+    },
+    back:{
+        height: 25,
+        width: 25
     }
 })

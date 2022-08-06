@@ -5,7 +5,6 @@ import metrices from "~/constants/metrices";
 export const styles = StyleSheet.create({
     opacity:{
         marginTop: metrices.HEIGHT(0.02),
-        height: metrices.HEIGHT(0.225),
     },
     card: {
         height: '100%',

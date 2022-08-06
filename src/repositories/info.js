@@ -47,7 +47,62 @@ async function _find(slug) {
 
 }
 
+async function _update(_id, payload, slug, actions, setIsLoading) {
+
+    setIsLoading(true)
+
+    const url = 'info/' + slug + '/' + _id;
+
+    const options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    };
+
+    const response = await _httpRequest(url, options)
+
+    if (response?.success) {
+        message.show()
+        actions.resetForm()
+        setIsLoading(false)
+    }
+    else {
+        message.show('error', 'Network error')
+        setIsLoading(false)
+    }
+
+}
+
+async function _delete(_id, slug, setIsLoading) {
+
+    setIsLoading(true)
+
+    const url = 'info/' + slug + '/' + _id;
+
+    const options = {
+        method: 'DELETE',
+    };
+
+    const response = await _httpRequest(url, options)
+
+    console.log(response)
+
+    if (response?.success) {
+        message.show()
+        setIsLoading(false)
+    }
+    else {
+        message.show('error', 'Network error')
+        setIsLoading(false)
+    }
+
+}
+
 export {
     _create,
-    _find
+    _find,
+    _update,
+    _delete
 }

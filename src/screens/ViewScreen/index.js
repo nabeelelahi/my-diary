@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { View, ScrollView, Image, ActivityIndicator, Text, RefreshControl } from 'react-native'
+import { View, ScrollView, Image, ActivityIndicator, Text, RefreshControl, TouchableOpacity } from 'react-native'
 import Header from '~/components/shared/Header'
+import DetailOptionsModal from '~/components/dedicated/Modals/DetailOptions'
 import FloatingButton from '~/components/shared/Buttons/FloatingButton'
-import ListCard from '../../components/shared/Cards/ListCard'
+import ListCard from '~/components/shared/Cards/ListCard'
 import { _find } from '~/repositories/info';
 import {
     plus,
@@ -18,9 +19,10 @@ export default function ViewScreen({ navigation, route }) {
     const data = route.params;
 
     const [state, setState] = useState([])
-
     const [renderState, setRenderState] = useState('loading')
     const [refreshing, setRefreshing] = useState(false)
+    const [visible, setVisible] = useState(false)
+    const [item, setItem] = useState(null)
 
     useEffect(() => {
         setRenderState('loading')
@@ -41,7 +43,7 @@ export default function ViewScreen({ navigation, route }) {
         }
 
     }
-    
+
     async function hanldeRefresh() {
 
         setRefreshing(true)
@@ -58,6 +60,11 @@ export default function ViewScreen({ navigation, route }) {
             setRefreshing(false)
         }
 
+    }
+
+    function onLongPress(value) {
+        setItem(value)
+        setVisible(true)
     }
 
     if (renderState === 'loading') {
@@ -77,20 +84,22 @@ export default function ViewScreen({ navigation, route }) {
 
     }
     else {
-        renderData = state?.map(item =>
-            <ListCard
-                key={item._id}
-                data={item}
-                item={data}
-                customStyles={styles.cardStyles}
-            />
-        )
+        renderData = state?.map(item => (
+            <TouchableOpacity onLongPress={() => onLongPress(item)}>
+                <ListCard
+                    key={`${Math.random() * 10000000}`}
+                    data={item}
+                    item={data}
+                    customStyles={styles.cardStyles}
+                />
+            </TouchableOpacity>
+        ))
     }
 
 
     return (
         <>
-            <Header title={data.title} navigation={navigation} />
+            <Header type={'back'} title={data.title} navigation={navigation} />
             <ScrollView
                 refreshControl={
                     <RefreshControl
@@ -104,10 +113,17 @@ export default function ViewScreen({ navigation, route }) {
                     {renderData}
                 </View>
             </ScrollView>
-            {/* <FloatingButton
+            <FloatingButton
                 onPress={() => navigation.navigate('FormScreen', data)}
                 icon={plus}
-            /> */}
+            />
+            <DetailOptionsModal
+                data={data}
+                item={item}
+                visible={visible}
+                setVisible={setVisible}
+                navigation={navigation}
+            />
         </>
     )
 }

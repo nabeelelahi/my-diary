@@ -2,11 +2,12 @@ import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Dahboard from '~/screens/Dashboard';
 import FormScreen from '~/screens/FormScreen';
+import EditFormScreen from '~/screens/FormScreen/edit';
 import SubTabs from '~/screens/SubTabs';
 import ViewScreen from '~/screens/ViewScreen';
 import PrivacyPolicy from '~/screens/PrivacyPolicy';
 import TermsAndConditions from '~/screens/TermsAndConditions';
-import DrawerComp from '~/components/shared/Drawer'
+import DrawerComp from '~/components/dedicated/Drawer'
 
 const Drawer = createDrawerNavigator();
 
@@ -22,6 +23,11 @@ export default function DrawerNavigation() {
         name="FormScreen"
         options={{ headerShown: false }}
         component={FormScreen}
+      />
+      <Drawer.Screen
+        name="EditFormScreen"
+        options={{ headerShown: false }}
+        component={EditFormScreen}
       />
       <Drawer.Screen
         name="SubTabs"

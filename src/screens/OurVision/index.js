@@ -2,7 +2,7 @@ import React from 'react';
 import { styles } from './ourVision';
 import globalStyles from '~/assets/styles/globalStyles';
 import GradientContainer from '~/components/shared/GradientContainer';
-import DescriptionCard from '~/components/shared/DescriptionCard';
+import DescriptionCard from '~/components/dedicated/Cards/DescriptionCard';
 import Button from '../../components/shared/Buttons/Button';
 import { TouchableOpacity } from 'react-native';
 

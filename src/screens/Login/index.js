@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     View,
     Text,
@@ -12,6 +12,7 @@ import { _login } from '~/repositories/auth';
 import { styles } from './login';
 import FlashMessage from "react-native-flash-message";
 import globalStyles from '~/assets/styles/globalStyles';
+import { useFocusEffect } from '@react-navigation/native';
 import {
     arroba,
     password
@@ -19,6 +20,7 @@ import {
 import GradientContainer from '~/components/shared/GradientContainer';
 import Button from '~/components/shared/Buttons/Button';
 import AuthInput from '~/components/shared/Inputs/AuthInput'
+import storage from '~/helpers/storage'
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
@@ -43,6 +45,16 @@ export default function Login({ navigation }) {
         { name: 'email', placeHolder: 'Email...', source: arroba, key: '1', secureTextEntry: false },
         { name: 'password', placeHolder: 'Password...', source: password, key: '3', secureTextEntry: true }
     ]
+
+    async function getUser() {
+        return await storage.get('user')
+    }
+
+    useFocusEffect(
+        React.useCallback(() => {
+            getUser().then(res => res && navigation.navigate('Home'))
+        }, [navigation])
+      );
 
     return (
         <ScrollView>

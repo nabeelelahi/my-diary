@@ -17,7 +17,7 @@ export default function SubTabs({ navigation, route }) {
 
   return (
     <>
-      <Header title={title} navigation={navigation} />
+      <Header type={'back'} title={title} navigation={navigation} />
       <ScrollView>
         <View style={styles.gridFlex}>
           {
@@ -26,6 +26,7 @@ export default function SubTabs({ navigation, route }) {
                 key={item.slug}
                 item={item}
                 index={index + 1}
+                length={subTabs[slug].length}
                 onPress={() => redirect(item)}
               />
             ))

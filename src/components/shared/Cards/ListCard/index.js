@@ -4,6 +4,7 @@ import formFields from '~/config/Data/formFields'
 import metrices from '~/constants/metrices'
 import globalStyles from '~/assets/styles/globalStyles'
 import capitalizeString from '~/helpers/capilatizeString'
+import _ from 'lodash'
 import { styles } from './listCards'
 
 export default function ListCard({ data, item, customStyles }) {
@@ -20,11 +21,12 @@ export default function ListCard({ data, item, customStyles }) {
     dynamicStyle.height = metrices.HEIGHT(height)
 
     useEffect(() => {
-        delete data.__v
-        delete data._id
-        delete data.userId
-        const render = Object.entries(data)?.map(([key, value]) => (
-            <View key={key} style={{ ...styles.column, ...globalStyles.centerContent }}>
+        const tempData = _.cloneDeep(data);
+        delete tempData.__v
+        delete tempData._id
+        delete tempData.userId
+        const render = Object.entries(tempData)?.map(([key, value]) => (
+            <View key={`${Math.random() * 1000000}`} style={{ ...styles.column, ...globalStyles.centerContent }}>
                 <Text style={styles.key}>{capitalizeString(key)}:</Text>
                 <Text style={styles.value}>{value}</Text>
             </View>

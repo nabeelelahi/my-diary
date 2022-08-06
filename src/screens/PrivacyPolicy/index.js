@@ -4,7 +4,7 @@ import { _find } from '~/repositories/info';
 import globalStyles from '~/assets/styles/globalStyles'
 import Header from '~/components/shared/Header'
 import GradientContainer from '~/components/shared/GradientContainer';
-import DescriptionCard from '~/components/shared/DescriptionCard';
+import DescriptionCard from '~/components/dedicated/Cards/DescriptionCard';
 import Button from '~/components/shared/Buttons/Button';
 import storage from '~/helpers/storage'
 import { styles } from './privacyPolicy';
@@ -25,7 +25,7 @@ export default function PrivacyPolicy({ navigation }) {
     if (user) {
         return (
             <>
-                <Header title={'Privacy Policy'} navigation={navigation} />
+                <Header type={'back'} title={'Privacy Policy'} navigation={navigation} />
                 <ScrollView>
                     <View style={globalStyles.container}>
                         <Text style={globalStyles.termsText}>
