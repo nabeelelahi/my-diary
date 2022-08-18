@@ -38,6 +38,7 @@ import noInternet from './images/No-Internet.png'
 import logoutIcon from './images/logout.png'
 import privacy from './images/privacy.png'
 import terms from './images/terms.png'
+import dummyUser from './images/Dummy-User.png'
 
 export {
     logo,
@@ -79,5 +80,6 @@ export {
     noInternet,
     logoutIcon,
     privacy,
-    terms
+    terms,
+    dummyUser
 }

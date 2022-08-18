@@ -50,7 +50,7 @@ const vaccinations_name = [
     { name: 'Shingles (Zoster) Vaccine - 2nd dose', value: 'Shingles (Zoster) Vaccine - 2nd dose', },
     { name: "Varicella (Chicken Pox) Vaccine - 1st dose", value: "Varicella (Chicken Pox) Vaccine - 1st dose", },
     { name: "Varicella (Chicken Pox) Vaccine - 2nd dose", value: "Varicella (Chicken Pox) Vaccine - 2nd dose", },
-    { name: 'Other', value: 'other', }
+    // { name: 'Other', value: 'other', }
 ]
 
 const personalInfo_sex = [
@@ -101,7 +101,7 @@ const emergencyContact_relation = [
     { name: 'Child', value: 'child' },
     { name: 'Spouse', value: 'spouse' },
     { name: 'Partner', value: 'partner' },
-    { name: 'Other', value: 'other' },
+    // { name: 'Other', value: 'other' },
 ]
 
 const emergencyRoom_hospitalAdmission = [
@@ -135,7 +135,7 @@ const medicalTest_procedure = [
     { name: 'Mammogram', value: 'mammogram' },
     { name: 'Pap Smear', value: 'pap-smear' },
     { name: 'Ultrasound', value: 'ultrasound' },
-    { name: 'Other', value: 'other' },
+    // { name: 'Other', value: 'other' },
 
 ]
 
@@ -164,7 +164,7 @@ const homeCare_noOfHours = [
     { name: '11-20', value: '11-20' },
     { name: '21-30', value: '21-30' },
     { name: '31-40', value: '31-40' },
-    { name: 'Other', value: 'other' },
+    // { name: 'Other', value: 'other' },
 ]
 
 const inpatientFacility_type = [
@@ -1225,7 +1225,6 @@ const medications_name = [
     { name: "VYNDAMAX", },
     { name: "VYTORIN", },
     { name: "VYVANSE", },
-    { name: "OTHER", },
     { name: "W:", },
     { name: "WAKIX", },
     { name: "WAL-ZYR-D", },
@@ -1340,8 +1339,7 @@ const medications_name = [
     { name: "ZPREXA", },
     { name: "ZYRTEC", },
     { name: "ZYTIGA", },
-    { name: "ZYVOX", },
-    { name: "OTHER" },
+    { name: "ZYVOX", }
 ]
 
 const laboratoryTest_procedure = [
@@ -1436,7 +1434,6 @@ const laboratoryTest_procedure = [
     { name: "VLDL", },
     { name: "WBC", },
     { name: "YEAST", },
-    { name: "OTHER" }
 ]
 
 const options = {

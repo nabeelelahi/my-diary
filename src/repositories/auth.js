@@ -10,9 +10,9 @@ async function _signUp(values, navigation, setIsLoading) {
 
     const options = {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        // headers: {
+        //     'Content-Type': 'application/json'
+        // },
         body: JSON.stringify(values)
     };
 

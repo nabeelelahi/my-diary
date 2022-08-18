@@ -62,13 +62,46 @@ const globalStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  termsText:{
+  termsText: {
     fontSize: 15,
     textAlign: 'center',
     margin: '5%',
     lineHeight: 24,
     color: colors.baseBlack
-  }
+  },
+  bottomModalcontainer: {
+    flex: 1,
+    backgroundColor: '#000000aa',
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  },
+  bottomModalbody: {
+    backgroundColor: colors.baseWhite,
+    height: '25%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    paddingVertical: '5%'
+  },
+  modalButton: {
+    height: metrices.HEIGHT(0.05),
+    width: metrices.WIDTH(0.8),
+    marginHorizontal: '5%',
+    alignSelf: 'center',
+    borderRadius: 75,
+    backgroundColor: colors.primary,
+    borderRadius: 25
+  },
+  modalCancel: {
+    backgroundColor: colors.validationRed,
+    width: metrices.WIDTH(0.6),
+  },
+  modalButtonText: {
+    fontWeight: 'bold',
+    letterSpacing: 2,
+    fontSize: 12,
+    color: colors.baseWhite
+  },
 });
 
 export default globalStyles;

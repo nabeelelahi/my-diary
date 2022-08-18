@@ -3,7 +3,7 @@ import { Modal, TouchableOpacity, View, ActivityIndicator } from 'react-native'
 import FlashMessage from "react-native-flash-message";
 import Button from '~/components/shared/Buttons/Button'
 import colors from '~/constants/colors'
-import { styles } from './styles'
+import globalStyles from '~/assets/styles/globalStyles'
 import { _delete } from '~/repositories/info'
 
 export default function DetailOptionsModal({ visible, setVisible, item, data, navigation }) {
@@ -24,8 +24,8 @@ export default function DetailOptionsModal({ visible, setVisible, item, data, na
             animationType="slide"
             visible={visible}
             transparent={true} >
-            <View style={styles.modalcontainer}>
-                <View style={styles.modalbody}>
+            <View style={globalStyles.bottomModalcontainer}>
+                <View style={globalStyles.bottomModalbody}>
                     {
                         isLoading ?
                             <ActivityIndicator size="large" color={colors.primary} />
@@ -34,22 +34,22 @@ export default function DetailOptionsModal({ visible, setVisible, item, data, na
                                 <TouchableOpacity onPress={onEdit}>
                                     <Button
                                         title="Edit"
-                                        style={{ ...styles.button, ...styles.edit }}
-                                        textStyle={styles.buttonText}
+                                        style={globalStyles.modalButton}
+                                        textStyle={globalStyles.modalButtonText}
                                     />
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={onDelete}>
                                     <Button
                                         title="Delete"
-                                        style={{ ...styles.button, ...styles.delete }}
-                                        textStyle={styles.buttonText}
+                                        style={styglobalStylesles.modalButton}
+                                        textStyle={globalStyles.modalButtonText}
                                     />
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => setVisible(false)} >
                                     <Button
                                         title="Cancel"
-                                        style={{ ...styles.button, ...styles.cancel }}
-                                        textStyle={styles.buttonText}
+                                        style={{ ...globalStyles.modalButton, ...globalStyles.modalCancel }}
+                                        textStyle={globalStyles.modalButtonText}
                                     />
                                 </TouchableOpacity>
                             </>

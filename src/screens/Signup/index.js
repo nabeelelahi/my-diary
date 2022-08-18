@@ -6,7 +6,8 @@ import {
     TouchableWithoutFeedback,
     KeyboardAvoidingView,
     ScrollView,
-    Keyboard
+    Keyboard,
+    ToastAndroid
 } from 'react-native'
 import FlashMessage from "react-native-flash-message";
 import { styles } from './signup';
@@ -16,6 +17,7 @@ import {
     password,
     person
 } from '~/assets';
+import UploadImageModal from '~/components/dedicated/Modals/UploadImage'
 import GradientContainer from '~/components/shared/GradientContainer';
 import Button from '~/components/shared/Buttons/Button';
 import AuthInput from '~/components/shared/Inputs/AuthInput'
@@ -47,18 +49,45 @@ export default function Signup({ navigation }) {
         { name: 'password', placeHolder: 'Password...', source: password, key: '3' },
     ]
 
-    const [isLoading, setIsLoading] = useState(false) 
+    const [isLoading, setIsLoading] = useState(false)
+    const [visible, setVisible] = useState(false)
+    const [image, setImage] = useState(null)
+
+    function _handleSubmit(values){
+        if(image && image?.path){
+            let payload = new FormData();
+            payload.append('email', values.email)
+            payload.append('password', values.password)
+            payload.append('name', values.name)
+            payload.append('image', image)
+            _signUp(payload, navigation, setIsLoading)
+        }
+        else{
+            ToastAndroid.show('Profile image is required', ToastAndroid.SHORT) 
+        }
+    }
 
     return (
         <ScrollView>
             <KeyboardAvoidingView>
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                    <GradientContainer topContainer={true} contentType='form'>
+                    <GradientContainer contentType='form'>
                         <Text style={{ ...globalStyles.title, ...styles.title }}>Sign Up</Text>
+                        <TouchableOpacity
+                            style={styles.profilePhoto}
+                            onPress={() => setVisible(true)}
+                        >
+                            {
+                                image  && image?.path ?
+                                    <Image source={image?.path} style={styles.profilePhotoImage} />
+                                    :
+                                    <Text style={styles.profilePhotoText}>Click here to upload image profile image</Text>
+                            }
+                        </TouchableOpacity>
                         <Formik
                             validationSchema={schema}
                             initialValues={{ email: '', password: '', name: '' }}
-                            onSubmit={(values) => _signUp(values, navigation, setIsLoading)}
+                            onSubmit={_handleSubmit}
                         >
                             {(props) => {
                                 return (
@@ -96,6 +125,11 @@ export default function Signup({ navigation }) {
                 </TouchableWithoutFeedback>
             </KeyboardAvoidingView>
             <FlashMessage position="top" />
+            <UploadImageModal
+                visible={visible}
+                setVisible={setVisible}
+                setImage={setImage}
+            />
         </ScrollView >
     )
 
