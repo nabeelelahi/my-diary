@@ -21,10 +21,18 @@ export default function Avatar({ title, hideTitle }) {
     return (
         <View style={globalStyles.centerContent}>
             <View style={styles.imageBox}>
-                <Image
-                    style={styles.image}
-                    source={{ uri: user?.image_url || dummyUser }}
-                />
+                {
+                    user?.image_url ?
+                        <Image
+                            style={styles.image}
+                            source={{ uri: user?.image_url }}
+                        />
+                        :
+                        <Image
+                            style={styles.image}
+                            source={dummyUser}
+                        />
+                }
             </View>
             {
                 !hideTitle &&

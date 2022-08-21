@@ -10,16 +10,14 @@ async function _signUp(values, navigation, setIsLoading) {
 
     const options = {
         method: 'POST',
-        // headers: {
-        //     'Content-Type': 'application/json'
-        // },
-        body: JSON.stringify(values)
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+        body: values
     };
 
 
     const response = await _httpRequest(url, options)
-
-    console.log(response)
 
     if (response?.success) {
         setIsLoading(false)

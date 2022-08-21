@@ -7,7 +7,8 @@ import {
     KeyboardAvoidingView,
     ScrollView,
     Keyboard,
-    ToastAndroid
+    ToastAndroid,
+    Image
 } from 'react-native'
 import FlashMessage from "react-native-flash-message";
 import { styles } from './signup';
@@ -35,7 +36,7 @@ const schema = yup.object({
         }),
     name: yup.string()
         .required()
-        .min(6),
+        .min(3),
     password: yup.string()
         .required()
         .min(6),
@@ -53,17 +54,30 @@ export default function Signup({ navigation }) {
     const [visible, setVisible] = useState(false)
     const [image, setImage] = useState(null)
 
-    function _handleSubmit(values){
-        if(image && image?.path){
+    function fileHandler(photo) {
+
+        let name = photo.path.split('/');
+        name = name[name.length - 1];
+
+        let type = photo.mime;
+
+        let uri = photo.path;
+
+        return { uri, name, type }
+
+    }
+
+    function _handleSubmit(values) {
+        if (image && image?.path) {
             let payload = new FormData();
             payload.append('email', values.email)
             payload.append('password', values.password)
             payload.append('name', values.name)
-            payload.append('image', image)
+            payload.append('image', fileHandler(image))
             _signUp(payload, navigation, setIsLoading)
         }
-        else{
-            ToastAndroid.show('Profile image is required', ToastAndroid.SHORT) 
+        else {
+            ToastAndroid.show('Profile image is required', ToastAndroid.SHORT)
         }
     }
 
@@ -78,10 +92,10 @@ export default function Signup({ navigation }) {
                             onPress={() => setVisible(true)}
                         >
                             {
-                                image  && image?.path ?
-                                    <Image source={image?.path} style={styles.profilePhotoImage} />
+                                image && image?.path ?
+                                    <Image source={{ uri: image?.path }} style={styles.profilePhotoImage} />
                                     :
-                                    <Text style={styles.profilePhotoText}>Click here to upload image profile image</Text>
+                                    <Text style={styles.profilePhotoText}>Click here to upload profile image</Text>
                             }
                         </TouchableOpacity>
                         <Formik

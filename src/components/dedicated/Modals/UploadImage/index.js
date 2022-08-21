@@ -11,15 +11,18 @@ export default function UploadImageModal({ visible, setVisible, setImage }) {
     function openGallery() {
 
         ImagePicker.openPicker({
-            width: 300,
-            height: 400,
+            width: 250,
+            height: 250,
             cropping: true
         })
             .then(image => {
+                console.log(image)
                 setImage(image);
+                setVisible(false)
             })
             .catch(err => {
                 console.log('not selected')
+                setVisible(false)
             })
 
     }
@@ -27,15 +30,17 @@ export default function UploadImageModal({ visible, setVisible, setImage }) {
     function openCamera() {
 
         ImagePicker.openCamera({
-            width: 300,
-            height: 400,
+            width: 250,
+            height: 250,
             cropping: true,
         })
             .then(image => {
                 setImage(image);
+                setVisible(false)
             })
             .catch(err => {
                 console.log('not selected')
+                setVisible(false)
             })
 
     }

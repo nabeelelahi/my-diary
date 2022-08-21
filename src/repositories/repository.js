@@ -14,7 +14,8 @@ const _httpRequest = async (url, options) => {
 
   } 
   catch (error) {
-    return error
+    console.log('catch')
+    console.log(error)
   }
 };
 

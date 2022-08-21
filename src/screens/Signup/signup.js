@@ -39,6 +39,7 @@ export const styles = StyleSheet.create({
     profilePhotoText: {
         letterSpacing: 2,
         fontSize: 12,
-        color: colors.secondary
+        color: colors.secondary,
+        textAlign: 'center'
     }
 })
